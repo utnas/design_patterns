@@ -5,7 +5,7 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Collections.unmodifiableList;
 
-public class PreSale implements Sales {
+public class PreSale implements SalesVisitor {
     private final String name;
     private final String phoneNumber;
     private List<Appointment> appointments = newArrayList();
