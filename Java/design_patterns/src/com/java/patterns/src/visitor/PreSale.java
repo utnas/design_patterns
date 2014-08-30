@@ -22,7 +22,7 @@ public class PreSale implements SalesVisitor {
 
     @Override
     public void visit(Customer customer) {
-
+        appointments.add(new Appointment(customer.getName()));
     }
 
     @Override

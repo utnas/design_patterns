@@ -12,7 +12,7 @@ public class CustomerTest {
     @Test
     public void acceptPreSalesVisit() {
 
-        Customer artItaly = new Customer();
+        Customer artItaly = new Customer("Art Italy");
         final PreSale joel = new PreSale("Joel", "212-233-1244");
         artItaly.accept(joel);
         assertThat(artItaly.visited(), is(true));
