@@ -1,6 +1,6 @@
-module Guest
+module Visitable
 
-  class Guested
+  class Guest
     def initialize(name)
       @name = name
     end

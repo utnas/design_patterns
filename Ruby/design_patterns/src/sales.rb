@@ -1,13 +1,15 @@
+require '../src/visitable'
 class Sales
 
-  include Guest
+  include Visitable
 
   def initialize(name)
     @name = name
+    @visited = Array.new
   end
 
   def visit(subject)
-    @visited = subject.get_name
+    @visited.push subject.get_name
   end
 
   public
