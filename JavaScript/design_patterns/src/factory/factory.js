@@ -1,3 +1,9 @@
-function Car() {
+(function () {
 
-}
+    'use strict';
+
+    function Car() {
+
+    }
+
+})();

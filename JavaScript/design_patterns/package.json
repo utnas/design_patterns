@@ -1,8 +1,8 @@
 {
-    "name": "application-name",
+    "name": "DesignPatterns",
     "version": "0.0.1",
     "private": true,
-    "main": "bindUsTogether.js",
+    "main": "Personnal trainning to practice common used design patterns",
     "dependencies": {
         "mocha": "latest"
     }
