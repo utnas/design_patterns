@@ -1,10 +1,14 @@
 package com.java.patterns.tests;
 
+import com.java.patterns.src.visitor.Appointment;
+import com.java.patterns.src.visitor.Visitable;
 import org.hamcrest.BaseMatcher;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -20,8 +24,22 @@ public class TestHelper {
 
             @Override
             public void describeTo(Description description) {
-                 // do nothing
+                // do nothing
             }
         };
+    }
+
+    public static Collection<Visitable> collect(Visitable... elements) {
+        ArrayList<Visitable> result = newArrayList();
+        Collections.addAll(result, elements);
+        return Collections.unmodifiableCollection(result);
+    }
+
+    public static List<String> toStringList(List<Appointment> appointments) {
+        List<String> result = newArrayList();
+        for (final Appointment appointment : appointments) {
+            result.add(appointment.getPartnerName());
+        }
+        return result;
     }
 }
