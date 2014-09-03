@@ -20,7 +20,7 @@ public class TestHelper {
 
             @Override
             public void describeTo(Description description) {
-
+                 // do nothing
             }
         };
     }

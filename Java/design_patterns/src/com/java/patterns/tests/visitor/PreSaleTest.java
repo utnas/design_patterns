@@ -5,6 +5,7 @@ import com.java.patterns.src.visitor.*;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -24,15 +25,20 @@ public class PreSaleTest {
     @Test
     public void testShouldHaveAppointmentBook() {
         ArrayList<Visitable> visitableList = newArrayList();
-        visitableList.add(new Customer("Toyota"));
-        visitableList.add(new Prospect("Art Confirm"));
-        visitableList.add(new RDManager("Alan"));
+
+        visitableList.addAll(collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
 
         PreSale preSale = new PreSale("Ryan", "123-223-3223");
         for (final Visitable visitable : visitableList) {
             visitable.accept(preSale);
         }
         assertThat(toStringList(preSale.getAppointments()), hasValues("Toyota", "Art Confirm", "Alan"));
+    }
+
+    private ArrayList<Visitable> collect(Visitable... elements) {
+        ArrayList<Visitable> result = newArrayList();
+        Collections.addAll(result, elements);
+        return result;
     }
 
     private List<String> toStringList(List<Appointment> appointments) {
