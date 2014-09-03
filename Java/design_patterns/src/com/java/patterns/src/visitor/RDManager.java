@@ -4,13 +4,13 @@ public class RDManager implements Visitable {
     private String sales;
     private boolean visited;
 
-    public RDManager(String sales) {
+    public RDManager(final String sales) {
         this.sales = sales;
         visited = true;
     }
 
     @Override
-    public void accept(SalesVisitor salesVisitor) {
+    public void accept(final SalesVisitor salesVisitor) {
         salesVisitor.visit(this);
     }
 

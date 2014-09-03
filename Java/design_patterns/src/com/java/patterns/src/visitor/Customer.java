@@ -4,12 +4,12 @@ public class Customer implements Visitable {
     private final String name;
     private boolean visited;
 
-    public Customer(String name) {
+    public Customer(final String name) {
         this.name = name;
     }
 
     @Override
-    public void accept(SalesVisitor salesVisitor) {
+    public void accept(final SalesVisitor salesVisitor) {
         salesVisitor.visit(this);
         visited = true;
     }

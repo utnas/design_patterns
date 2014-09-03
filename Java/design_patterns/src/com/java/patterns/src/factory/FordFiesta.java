@@ -7,7 +7,7 @@ public class FordFiesta implements Car {
     private String version;
     private String factoringYear;
 
-    public FordFiesta(final Model model, String version, String factoringYear) {
+    public FordFiesta(final Model model, final String version, final String factoringYear) {
         this.model = model;
         this.version = version;
         this.factoringYear = factoringYear;

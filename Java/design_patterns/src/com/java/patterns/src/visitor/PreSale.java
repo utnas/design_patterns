@@ -16,17 +16,17 @@ public class PreSale implements SalesVisitor {
     }
 
     @Override
-    public void visit(Prospect prospect) {
+    public void visit(final Prospect prospect) {
         appointments.add(new Appointment(prospect.getName()));
     }
 
     @Override
-    public void visit(Customer customer) {
+    public void visit(final Customer customer) {
         appointments.add(new Appointment(customer.getName()));
     }
 
     @Override
-    public void visit(RDManager rdManager) {
+    public void visit(final RDManager rdManager) {
         appointments.add(new Appointment(rdManager.getSales()));
     }
 

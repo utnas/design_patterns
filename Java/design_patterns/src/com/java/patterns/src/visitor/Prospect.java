@@ -10,7 +10,7 @@ public class Prospect implements Visitable {
     }
 
     @Override
-    public void accept(SalesVisitor salesVisitor) {
+    public void accept(final SalesVisitor salesVisitor) {
         salesVisitor.visit(this);
         visited = true;
     }

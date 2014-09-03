@@ -8,10 +8,10 @@ import org.hamcrest.Matcher;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static java.util.Collections.*;
 
 public class TestHelper {
 
@@ -29,17 +29,17 @@ public class TestHelper {
         };
     }
 
-    public static Collection<Visitable> collect(Visitable... elements) {
+    public static Collection<Visitable> collect(final Visitable... elements) {
         ArrayList<Visitable> result = newArrayList();
-        Collections.addAll(result, elements);
-        return Collections.unmodifiableCollection(result);
+        addAll(result, elements);
+        return unmodifiableCollection(result);
     }
 
-    public static List<String> toStringList(List<Appointment> appointments) {
+    public static List<String> toStringList(final List<Appointment> appointments) {
         List<String> result = newArrayList();
         for (final Appointment appointment : appointments) {
             result.add(appointment.getPartnerName());
         }
-        return result;
+        return unmodifiableList(result);
     }
 }

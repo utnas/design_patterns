@@ -1,6 +1,7 @@
 package com.java.patterns.src.factory;
 
 import static com.java.patterns.src.factory.Ford.Model;
+import static java.lang.String.valueOf;
 
 public class FordFocus implements Car {
     private final Model model;
@@ -15,7 +16,7 @@ public class FordFocus implements Car {
 
     @Override
     public String getModel() {
-        return String.valueOf(model);
+        return valueOf(model);
     }
 
     @Override
