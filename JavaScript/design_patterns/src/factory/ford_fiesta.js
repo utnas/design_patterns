@@ -1,6 +1,6 @@
-exports.fiesta = (function () {
-    'use strict';
+var car_module = require('./car');
 
-    function FordFiesta(options) {
-    }
-})();
+exports.FordFiesta = function FordFiesta(options) {
+    'use strict';
+    return new car_module.Car(options);
+};

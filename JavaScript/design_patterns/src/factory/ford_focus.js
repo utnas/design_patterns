@@ -1,8 +1,6 @@
-exports.focus = (function () {
+var car_module = require('./car');
+
+exports.FordFocus = function FordFocus(options) {
     'use strict';
-
-    function FordFocus(options) {
-
-    }
-
-})();
+    return new car_module.Car(options);
+};

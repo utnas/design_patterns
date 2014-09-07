@@ -1,9 +1,14 @@
-exports.car = (function () {
+exports.Car = function Car(options) {
     'use strict';
+    var _options = {};
 
-    function Car(options) {
-        this.model = options.model;
-        this.version = options.version;
-        this.factoryYear = options.factoryYear;
+    if (options !== undefined) {
+        _options.model = options.model;
+        _options.version = options.version;
+        _options.factoryYear = options.factoryYear;
     }
-})();
+
+    this.getOptions = function () {
+        return _options;
+    };
+};
