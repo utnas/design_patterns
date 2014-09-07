@@ -4,6 +4,8 @@
     "private": true,
     "main": "Personnal trainning to practice common used design patterns",
     "dependencies": {
-        "mocha": "latest"
+        "nodeunit": "latest",
+        "mocha": "latest",
+        "require": "latest"
     }
 }
