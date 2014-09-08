@@ -1,4 +1,5 @@
 var computer = require('../../src/decorator/computer');
+var decorator_module = require('../../src/decorator/decorator');
 
 var assert = require('assert');
 
@@ -14,4 +15,15 @@ describe('Factory tests', function () {
         });
     });
 
+    describe('Decorator off a computer', function () {
+        it('should decorate computer with memory and hard drive price', function () {
+            var macBook = new computer.Computer('MacBook Pro', 990, 13);
+            var decorator = new decorator_module.Decorator();
+            assert.equal(macBook.getCost(), 990);
+            decorator.memory(macBook);
+            assert.equal(macBook.getCost(), 1065);
+            decorator.hardDrive(macBook);
+            assert.equal(macBook.getCost(), 1315)
+        });
+    });
 });

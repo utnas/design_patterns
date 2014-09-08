@@ -16,4 +16,5 @@ exports.Computer = function Computer(model, basicPrice, size) {
     this.getModel = function () {
         return _model;
     };
+
 };
