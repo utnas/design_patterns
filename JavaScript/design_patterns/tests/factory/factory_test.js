@@ -19,7 +19,7 @@ describe('Factory pattern', function () {
         });
     });
 
-    describe('Car factory make a car_module', function () {
+    describe('Car factory make a car ford with model fiesta', function () {
         it('should make a ford fiesta_module', function () {
             var factory = new carFactory.Factory();
             var fiesta = factory.makeCar('FIESTA');
@@ -27,7 +27,7 @@ describe('Factory pattern', function () {
             assert.equal(fiesta.getOptions().version, '90-TDI');
         });
 
-        it('should make a ford focus_module', function () {
+        it('should make a car ford with model focus', function () {
             var factory = new carFactory.Factory();
             var focus = factory.makeCar('FOCUS');
             assert.equal(focus.getOptions().model, 'Focus');
