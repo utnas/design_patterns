@@ -3,38 +3,64 @@ var decorator_module = require('../../src/decorator/decorator');
 
 var assert = require('assert');
 
+function instantiateComputer() {
+    return new computer.Computer('MacBook Pro', 990, 13);
+}
+
 describe('Factory tests', function () {
     'use strict';
 
     describe('Decorate the computer', function () {
-        var macBook = new computer.Computer('MacBook Pro', 990, 13);
         it('should return the cost of the computer', function () {
+            var macBook = instantiateComputer();
             assert.equal(macBook.getCost(), '990');
         });
 
         it('should return the model of the computer', function () {
+            var macBook = instantiateComputer();
             assert.equal(macBook.getModel(), 'MacBook Pro');
         });
 
         it('should return the size of the computer', function () {
+            var macBook = instantiateComputer();
             assert.equal(macBook.getSize(), '13');
         });
     });
 
-    describe('Decorator off a computer', function () {
-        var macBook = new computer.Computer('MacBook Pro', 990, 13);
-        var decorator = new decorator_module.Decorator();
+    describe('Decorator of a computer', function () {
 
         it('should retrieve the basic price of the computer', function () {
+            var macBook = instantiateComputer();
             assert.equal(macBook.getCost(), 990);
         });
 
         it('should decorate computer with the memory price', function () {
+            var macBook = instantiateComputer();
+            var decorator = new decorator_module.Decorator();
             decorator.memory(macBook);
             assert.equal(macBook.getCost(), 1065);
         });
-        it('should decorate computer with the hard drive price', function () {
+
+        it('should add computer with the hard-drive price', function () {
+            var macBook = instantiateComputer();
+            var decorator = new decorator_module.Decorator();
             decorator.hardDrive(macBook);
+            assert.equal(macBook.getCost(), 1240)
+        });
+
+        it('should decorate the computer with memory then hard-drive', function () {
+            var macBook = instantiateComputer();
+            var decorator = new decorator_module.Decorator();
+            decorator.memory(macBook);
+            decorator.hardDrive(macBook);
+            assert.equal(macBook.getCost(), 1315)
+        });
+
+        it('should decorate the computer with hard-drive then memory', function () {
+            var macBook = instantiateComputer();
+            var decorator = new decorator_module.Decorator();
+            decorator.hardDrive(macBook);
+            decorator.memory(macBook);
             assert.equal(macBook.getCost(), 1315)
         });
     });
