@@ -1,5 +1,6 @@
 package com.java.patterns.tests.observer;
 
+import com.java.patterns.src.observer.Code;
 import com.java.patterns.src.observer.IObservable;
 import com.java.patterns.src.observer.User;
 import org.junit.Test;

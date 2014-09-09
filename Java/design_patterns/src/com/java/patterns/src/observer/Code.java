@@ -1,4 +1,4 @@
-package com.java.patterns.tests.observer;
+package com.java.patterns.src.observer;
 
 import com.java.patterns.src.observer.IObservable;
 import com.java.patterns.src.observer.IObserver;
