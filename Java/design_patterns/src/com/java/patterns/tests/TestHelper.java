@@ -1,5 +1,6 @@
 package com.java.patterns.tests;
 
+import com.java.patterns.src.observer.User;
 import com.java.patterns.src.visitor.Appointment;
 import com.java.patterns.src.visitor.Visitable;
 import org.hamcrest.BaseMatcher;
@@ -17,12 +18,10 @@ public class TestHelper {
 
     public static Matcher<List<?>> hasValues(final String... values) {
         return new BaseMatcher<List<?>>() {
-            @Override
             public boolean matches(Object objects) {
                 return values.length != 0 && ((Collection<?>) objects).containsAll(newArrayList(values));
             }
 
-            @Override
             public void describeTo(Description description) {
                 // do nothing
             }
@@ -41,5 +40,9 @@ public class TestHelper {
             result.add(appointment.getPartnerName());
         }
         return unmodifiableList(result);
+    }
+
+    public static User createUser(final String userName) {
+        return new User(userName);
     }
 }
