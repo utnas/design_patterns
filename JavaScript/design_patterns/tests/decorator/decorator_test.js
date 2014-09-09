@@ -3,10 +3,6 @@ var decorator_module = require('../../src/decorator/decorator');
 
 var assert = require('assert');
 
-function instantiateComputer() {
-    return new computer.Computer('MacBook Pro', 990, 13);
-}
-
 describe('Factory tests', function () {
     'use strict';
 
@@ -65,3 +61,10 @@ describe('Factory tests', function () {
         });
     });
 });
+
+function instantiateComputer(model, price, size) {
+    model = model || 'MacBook Pro';
+    price = price || 990;
+    size = size || 13;
+    return new computer.Computer(model, price, size);
+}
