@@ -10,7 +10,7 @@ public interface IObservable {
 
     public int getLength();
 
-    public void incrementLength();
+    public int incrementLength();
 
     public void addModifier(final String name);
 

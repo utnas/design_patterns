@@ -1,8 +1,5 @@
 package com.java.patterns.src.observer;
 
-import com.java.patterns.src.observer.IObservable;
-import com.java.patterns.src.observer.IObserver;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -40,8 +37,8 @@ public class Code implements IObservable {
         return size;
     }
 
-    public void incrementLength() {
-        ++size;
+    public int incrementLength() {
+        return ++size;
     }
 
     public void addModifier(String name) {
