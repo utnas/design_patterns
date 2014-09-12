@@ -51,8 +51,12 @@ public class Code implements IObservable {
     }
 
     @Override
-    public List<IObserver> getObservers() {
-        return unmodifiableList(observers);
+    public List<String> getObservers() {
+        List<String> result = newArrayList();
+        for (final IObserver observer : observers) {
+            result.add(((User) observer).getName());
+        }
+        return unmodifiableList(result);
     }
 
     public String getLastModifier() {

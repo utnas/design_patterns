@@ -18,5 +18,5 @@ public interface IObservable {
 
     public void triggerNotification();
 
-    public List<IObserver> getObservers();
+    public List<String> getObservers();
 }

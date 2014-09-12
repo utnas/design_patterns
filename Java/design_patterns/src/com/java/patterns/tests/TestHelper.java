@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static com.google.common.collect.Iterables.isEmpty;
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Collections.*;
 
@@ -19,7 +20,11 @@ public class TestHelper {
     public static Matcher<List<?>> hasValues(final String... values) {
         return new BaseMatcher<List<?>>() {
             public boolean matches(Object objects) {
-                return values.length != 0 && ((Collection<?>) objects).containsAll(newArrayList(values));
+                if (values.length == 0) {
+                    return isEmpty((Iterable<?>) objects);
+                } else {
+                    return ((Collection<?>) objects).containsAll(newArrayList(values));
+                }
             }
 
             public void describeTo(Description description) {
