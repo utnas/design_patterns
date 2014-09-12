@@ -5,6 +5,7 @@ import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Lists.newLinkedList;
+import static java.util.Collections.unmodifiableList;
 
 public class Code implements IObservable {
     private int size;
@@ -47,6 +48,11 @@ public class Code implements IObservable {
 
     public void triggerNotification() {
         notifyObservers();
+    }
+
+    @Override
+    public List<IObserver> getObservers() {
+        return unmodifiableList(observers);
     }
 
     public String getLastModifier() {

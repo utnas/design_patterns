@@ -65,4 +65,14 @@ public class CodeTest {
         assertThat(dooley.getLastNotification(), not("Code was updated by Dooley. The current size is 2"));
     }
 
+    @Test
+    public void testWhenRemoveObserverShouldDeleteObserverFromList() {
+        final Code code = new Code();
+        final User user = createUser("A User");
+        code.addObserver(user);
+
+        assertThat(code.getObservers().size(), is(1));
+        code.removeObserver(user);
+        assertThat(code.getObservers().size(), is(0));
+    }
 }
