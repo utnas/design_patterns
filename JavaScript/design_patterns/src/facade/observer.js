@@ -1,40 +1,24 @@
-exports.Observer = function Observer() {
+var Observable = require('./observable');
+
+exports.Observer = function (userName) {
     'use strict';
+    var name = userName,
+        lastNotification = "";
 
-    var size = 0;
-    var observers = {};
-    var modifiers = {};
-
-    this.update = function update(observable) {
-    };
-
-    this.addObserver = function addObserver(observer) {
-        if (observer instanceof Observer) {
-            observers.add(observer);
-        }
-        return observers;
-    };
-
-    this.removeObserver = function removeObserver(observer) {
-        if (observer instanceof Observer) {
-            var value;
-            for (value in observers) {
-                if (value === observer) {
-                    return observers.delete(observer);
-                }
-            }
+    this.update = function (observable) {
+        if (observable instanceof Observable.Observable) {
+            observable.increaseSize();
+            observable.addObserver(name);
+            observable.triggerChange();
         }
     };
 
-    this.getSize = function gerSize() {
-        return size;
+    this.addNotification = function (notification) {
+        lastNotification = notification;
     };
 
-    this.getObservers = function () {
-        return observers;
-    };
 
-    this.modifiers = function () {
-        return modifiers;
+    this.getLastNotification = function () {
+        return lastNotification;
     };
 };
