@@ -1,23 +1,23 @@
 var computer_module = require('./computer');
 
-exports.Decorator = function Decorator() {
+exports.Decorator = function () {
     'use strict';
 
-    this.memory = (function memory(computer) {
+    this.memory = function memory(computer) {
         if (computer instanceof computer_module.Computer) {
             var cost = computer.getCost();
             computer.getCost = function () {
                 return cost + 75;
             }
         }
-    });
+    };
 
-    this.hardDrive = (function hardDrive(computer) {
+    this.hardDrive = function hardDrive(computer) {
         if (computer instanceof computer_module.Computer) {
             var cost = computer.getCost();
             computer.getCost = function () {
                 return cost + 250;
             }
         }
-    });
+    };
 };

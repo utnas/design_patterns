@@ -1,4 +1,4 @@
-exports.Computer = function Computer(model, basicPrice, size) {
+exports.Computer = function (model, basicPrice, size) {
     'use strict';
 
     var _model = model;

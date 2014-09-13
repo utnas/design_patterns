@@ -1,5 +1,5 @@
-var computer = require('../../src/decorator/computer');
-var decorator_module = require('../../src/decorator/decorator');
+var Computer = require('../../src/decorator/computer');
+var Decorator = require('../../src/decorator/decorator');
 
 var assert = require('assert');
 
@@ -32,21 +32,21 @@ describe('Factory tests', function () {
 
         it('should decorate computer with the memory price', function () {
             var macBook = instantiateComputer();
-            var decorator = new decorator_module.Decorator();
+            var decorator = new Decorator.Decorator();
             decorator.memory(macBook);
             assert.equal(macBook.getCost(), 1065);
         });
 
         it('should add computer with the hard-drive price', function () {
             var macBook = instantiateComputer();
-            var decorator = new decorator_module.Decorator();
+            var decorator = new Decorator.Decorator();
             decorator.hardDrive(macBook);
             assert.equal(macBook.getCost(), 1240)
         });
 
         it('should decorate the computer with memory then hard-drive', function () {
             var macBook = instantiateComputer();
-            var decorator = new decorator_module.Decorator();
+            var decorator = new Decorator.Decorator();
             decorator.memory(macBook);
             decorator.hardDrive(macBook);
             assert.equal(macBook.getCost(), 1315)
@@ -54,7 +54,7 @@ describe('Factory tests', function () {
 
         it('should decorate the computer with hard-drive then memory', function () {
             var macBook = instantiateComputer();
-            var decorator = new decorator_module.Decorator();
+            var decorator = new Decorator.Decorator();
             decorator.hardDrive(macBook);
             decorator.memory(macBook);
             assert.equal(macBook.getCost(), 1315)
@@ -66,5 +66,5 @@ function instantiateComputer(model, price, size) {
     model = model || 'MacBook Pro';
     price = price || 990;
     size = size || 13;
-    return new computer.Computer(model, price, size);
+    return new Computer.Computer(model, price, size);
 }

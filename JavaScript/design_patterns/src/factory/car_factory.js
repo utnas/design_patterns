@@ -2,9 +2,9 @@ var car_module = require('./car');
 var fiesta_module = require('./ford_fiesta');
 var focus_module = require('./ford_focus');
 
-exports.Factory = function CarFactory() {
+exports.Factory = function() {
     'use strict';
-    this.makeCar = (function makeCar(option) {
+    this.makeCar = function makeCar(option) {
         switch (option) {
             case 'FIESTA':
                 var fordFiesta = new fiesta_module.FordFiesta({model: 'Fiesta', version: '90-TDI'});
@@ -16,5 +16,5 @@ exports.Factory = function CarFactory() {
                 var car = new car_module.Car({model: '', version: ''});
                 return car;
         }
-    });
+    };
 };

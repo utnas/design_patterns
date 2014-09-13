@@ -1,4 +1,4 @@
-exports.Car = function Car(options) {
+exports.Car = function (options) {
     'use strict';
     var _options = {};
 
