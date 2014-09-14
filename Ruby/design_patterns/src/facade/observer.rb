@@ -1,6 +1,6 @@
 class Observer
 
-  def update(observable)
+  def commit(observable)
     observable.increment_length
     observable.add_modifier(@name)
     observable.trigger_notification

@@ -9,7 +9,7 @@ class UserTest < Test::Unit::TestCase
     code = Code.new
 
     assert_equal(code.get_length, 0)
-    user.update(code)
+    user.commit(code)
     assert_equal(code.get_length, 1)
   end
 
