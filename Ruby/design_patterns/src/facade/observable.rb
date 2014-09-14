@@ -10,8 +10,12 @@ class Observable
     @length = @length +1
   end
 
-  def add_observer(name)
-    @modifiers.push(name)
+  def add_observer(observer)
+    @observers.push(observer)
+  end
+
+  def remove_observer(observer)
+    @observers.delete(observer)
   end
 
   def trigger_notification
@@ -23,9 +27,13 @@ class Observable
   end
 
   def notify_all
-    @observers.each do |notifier|
-      notifier.add_notification('A notification was sent')
+    @observers.each do |observer|
+      observer.receive_notification('A notification was sent')
     end
+  end
+
+  def get_observers
+    @observers
   end
 
   def get_length
