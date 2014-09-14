@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static com.java.patterns.tests.TestHelper.hasValues;
+import static com.java.patterns.tests.TestHelper.toStringList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -31,7 +32,7 @@ public class PreSaleTest {
         for (final Visitable visitable : visitableList) {
             visitable.accept(preSale);
         }
-        assertThat(TestHelper.toStringList(preSale.getAppointments()), hasValues("Toyota", "Art Confirm", "Alan"));
+        assertThat(toStringList(preSale.getAppointments()), hasValues("Toyota", "Art Confirm", "Alan"));
     }
 
 }
