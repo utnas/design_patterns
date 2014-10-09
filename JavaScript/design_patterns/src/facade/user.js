@@ -1,6 +1,6 @@
-var Observer = require('./observer');
+var Observer = require('./observer').Observer;
 
 exports.User = function () {
     'use strict';
-    return new Observer.Observer();
+    return new Observer();
 };

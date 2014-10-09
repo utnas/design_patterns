@@ -1,4 +1,4 @@
-var Observer = require('./observer');
+var Observer = require('./observer').Observer;
 
 exports.Observable = function () {
     'use strict';
@@ -8,14 +8,14 @@ exports.Observable = function () {
     var modifiers = {};
 
     this.addObserver = function addObserver(observer) {
-        if (observer instanceof Observer.Observer) {
+        if (observer instanceof Observer) {
             observers.push(observer);
         }
         return observers;
     };
 
     this.removeObserver = function removeObserver(observer) {
-        if (observer instanceof Observer.Observer) {
+        if (observer instanceof Observer) {
             var index = observers.indexOf(observer);
             if (index > -1) {
                 observers.splice(index);
@@ -33,7 +33,7 @@ exports.Observable = function () {
 
         for (index; index < observers.length; index++) {
             value = observers[index];
-            if (value instanceof  Observer.Observer) {
+            if (value instanceof  Observer) {
                 value.addNotification('A new notification was received');
             }
         }

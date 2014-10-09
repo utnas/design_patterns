@@ -1,4 +1,4 @@
-var Observable = require('./observable');
+var Observable = require('./observable').Observable;
 
 exports.Observer = function (userName) {
     'use strict';
@@ -6,7 +6,7 @@ exports.Observer = function (userName) {
         lastNotification = "";
 
     this.update = function (observable) {
-        if (observable instanceof Observable.Observable) {
+        if (observable instanceof Observable) {
             observable.increaseSize();
             observable.addObserver(name);
             observable.triggerChange();

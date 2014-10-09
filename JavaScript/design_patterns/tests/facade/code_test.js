@@ -1,5 +1,5 @@
-var code_module = require('../../src/facade/code');
-var observer_module = require('../../src/facade/user');
+var Code = require('../../src/facade/code').Code;
+var User = require('../../src/facade/user').User;
 
 var assert = require('assert');
 
@@ -7,7 +7,7 @@ describe('Code facade tests', function () {
     'use strict';
 
     it('should increase the size of Code', function () {
-        var myCode = new code_module.Code();
+        var myCode = new Code();
 
         assert.equal(myCode.getSize(), 0);
         myCode.increaseSize();
@@ -15,8 +15,8 @@ describe('Code facade tests', function () {
     });
 
     it('should add a new observer', function () {
-        var code = new code_module.Code();
-        var observer = new observer_module.User('Dooley');
+        var code = new Code();
+        var observer = new User('Dooley');
 
         assert.equal(code.getObservers().length, 0);
         code.addObserver(observer);
@@ -24,8 +24,8 @@ describe('Code facade tests', function () {
     });
 
     it('should remove a observer', function () {
-        var code = new code_module.Code();
-        var observer = new observer_module.User('Dooley');
+        var code = new Code();
+        var observer = new User('Dooley');
 
         assert.equal(code.getObservers().length, 0);
         code.addObserver(observer);
@@ -35,10 +35,10 @@ describe('Code facade tests', function () {
     });
 
     it('should notify all observers', function () {
-        var code = new code_module.Code();
-        var dooley = new observer_module.User('Dooley');
-        var lucy = new observer_module.User('Lucy');
-        var christel = new observer_module.User('Christel');
+        var code = new Code();
+        var dooley = new User('Dooley');
+        var lucy = new User('Lucy');
+        var christel = new User('Christel');
 
         code.addObserver(dooley);
         code.addObserver(lucy);

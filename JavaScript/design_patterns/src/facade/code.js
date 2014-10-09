@@ -1,6 +1,6 @@
-var observer = require('./observable');
+var Observable = require('./observable').Observable;
 
 exports.Code = function Code() {
     'use strict';
-    return new observer.Observable();
+    return new Observable();
 };

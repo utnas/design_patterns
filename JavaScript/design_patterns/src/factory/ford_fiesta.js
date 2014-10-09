@@ -1,6 +1,6 @@
-var car_module = require('./car');
+var Car = require('./car').Car;
 
-exports.FordFiesta = function(options) {
+exports.FordFiesta = function (options) {
     'use strict';
-    return new car_module.Car(options);
+    return new Car(options);
 };

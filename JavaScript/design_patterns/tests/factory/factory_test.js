@@ -1,5 +1,5 @@
-var carFactory = require('../../src/factory/car_factory');
-var car = require('../../src/factory/car');
+var Factory = require('../../src/factory/car_factory').Factory;
+var Car = require('../../src/factory/car').Car;
 
 var assert = require('assert');
 
@@ -45,9 +45,9 @@ describe('Factory pattern', function () {
 
 function instantiateCar(options) {
     var option = options || {'model': 'Focus', 'version': '90-TDI'};
-    return new car.Car(option);
+    return new Car(option);
 }
 
 function instantiateFactory() {
-    return new carFactory.Factory();
+    return new Factory();
 }
