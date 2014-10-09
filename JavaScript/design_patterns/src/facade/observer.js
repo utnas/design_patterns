@@ -3,7 +3,7 @@ var Observable = require('./observable').Observable;
 exports.Observer = function (userName) {
     'use strict';
     var name = userName,
-        lastNotification = "";
+        lastNotification = '';
 
     this.update = function (observable) {
         if (observable instanceof Observable) {
@@ -16,7 +16,6 @@ exports.Observer = function (userName) {
     this.addNotification = function (notification) {
         lastNotification = notification;
     };
-
 
     this.getLastNotification = function () {
         return lastNotification;
