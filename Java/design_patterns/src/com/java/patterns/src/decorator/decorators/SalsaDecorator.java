@@ -1,7 +1,8 @@
 package com.java.patterns.src.decorator.decorators;
 
-import com.java.patterns.src.decorator.model.MusicBuilder;
 import com.java.patterns.src.decorator.model.MusicSample;
+
+import static com.java.patterns.src.decorator.model.MusicBuilder.make;
 
 public class SalsaDecorator implements MusicDecorator {
     private final MusicSample music;
@@ -13,7 +14,7 @@ public class SalsaDecorator implements MusicDecorator {
 
     @Override
     public MusicSample harmonize() {
-        return MusicBuilder.make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
+        return make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
     }
 
     @Override

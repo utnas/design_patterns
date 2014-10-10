@@ -1,7 +1,8 @@
 package com.java.patterns.src.decorator.decorators;
 
-import com.java.patterns.src.decorator.model.MusicBuilder;
 import com.java.patterns.src.decorator.model.MusicSample;
+
+import static com.java.patterns.src.decorator.model.MusicBuilder.make;
 
 public class RumbaDecorator implements MusicDecorator {
     private MusicSample music;
@@ -13,7 +14,7 @@ public class RumbaDecorator implements MusicDecorator {
 
     @Override
     public MusicSample harmonize() {
-        music = MusicBuilder.make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
+        music = make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
         return music;
     }
 
