@@ -19,7 +19,7 @@ public class MusicSample implements Music {
     }
 
     public Music harmonize() {
-        return MusicFactory.make(melody, tempo);
+        return MusicBuilder.make(melody, tempo);
     }
 
     public String getMelody() {
