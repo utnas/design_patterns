@@ -1,9 +1,9 @@
 package com.java.patterns.tests.decorator;
 
 
-import com.java.patterns.src.decorator.model.MusicSample;
 import com.java.patterns.src.decorator.decorators.RumbaDecorator;
 import com.java.patterns.src.decorator.decorators.SalsaDecorator;
+import com.java.patterns.src.decorator.model.MusicSample;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -30,8 +30,8 @@ public class DecoratorTest {
     @Test
     public void testRumbaThenSalsaHarmonization() {
         MusicSample sample = new MusicSample("Melody");
-        sample = (MusicSample) new RumbaDecorator(sample).harmonize();
-        sample = (MusicSample) new SalsaDecorator(sample).harmonize();
+        sample = new RumbaDecorator(sample).harmonize();
+        sample = new SalsaDecorator(sample).harmonize();
 
         assertThat(sample.getTempo(), is(145));
     }
@@ -39,8 +39,8 @@ public class DecoratorTest {
     @Test
     public void testSalsaThenRumbaHarmonization() {
         MusicSample sample = new MusicSample("Melody");
-        sample = (MusicSample) new SalsaDecorator(sample).harmonize();
-        sample = (MusicSample) new RumbaDecorator(sample).harmonize();
+        sample = new SalsaDecorator(sample).harmonize();
+        sample = new RumbaDecorator(sample).harmonize();
 
         assertThat(sample.getTempo(), is(125));
     }
