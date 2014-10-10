@@ -14,6 +14,7 @@ public class MusicSample implements Music {
         this.tempo = tempo;
     }
 
+    @Override
     public int getTempo() {
         return tempo;
     }

@@ -11,10 +11,12 @@ public class SalsaDecorator implements MusicDecorator {
         music = musicSample;
     }
 
+    @Override
     public MusicSample harmonize() {
         return MusicBuilder.make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
     }
 
+    @Override
     public int getTempo() {
         return tempo;
     }

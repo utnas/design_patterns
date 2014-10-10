@@ -11,11 +11,13 @@ public class RumbaDecorator implements MusicDecorator {
         this.music = musicSample;
     }
 
+    @Override
     public MusicSample harmonize() {
         music = MusicBuilder.make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
         return music;
     }
 
+    @Override
     public int getTempo() {
         return tempo;
     }
