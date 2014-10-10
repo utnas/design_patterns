@@ -18,10 +18,6 @@ public class MusicSample implements Music {
         return tempo;
     }
 
-    public Music harmonize() {
-        return MusicBuilder.make(melody, tempo);
-    }
-
     public String getMelody() {
         return melody;
     }
