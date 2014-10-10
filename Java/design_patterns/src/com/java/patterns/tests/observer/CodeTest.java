@@ -5,8 +5,8 @@ import com.java.patterns.src.observer.IObservable;
 import com.java.patterns.src.observer.User;
 import org.junit.Test;
 
-import static com.java.patterns.tests.TestHelper.createUser;
-import static com.java.patterns.tests.TestHelper.hasValues;
+import static com.java.patterns.tests.CollectionHelper.createUser;
+import static com.java.patterns.tests.CollectionHelper.hasValues;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;

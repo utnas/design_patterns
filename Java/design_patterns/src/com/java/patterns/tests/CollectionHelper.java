@@ -15,7 +15,7 @@ import static com.google.common.collect.Iterables.isEmpty;
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Collections.*;
 
-public class TestHelper {
+public class CollectionHelper {
 
     public static Matcher<List<?>> hasValues(final String... values) {
         return new BaseMatcher<List<?>>() {

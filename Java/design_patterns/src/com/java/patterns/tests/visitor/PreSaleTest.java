@@ -2,14 +2,14 @@ package com.java.patterns.tests.visitor;
 
 
 import com.java.patterns.src.visitor.*;
-import com.java.patterns.tests.TestHelper;
+import com.java.patterns.tests.CollectionHelper;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static com.java.patterns.tests.TestHelper.hasValues;
-import static com.java.patterns.tests.TestHelper.toStringList;
+import static com.java.patterns.tests.CollectionHelper.hasValues;
+import static com.java.patterns.tests.CollectionHelper.toStringList;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -26,7 +26,7 @@ public class PreSaleTest {
     public void testShouldHaveAppointmentBook() {
         ArrayList<Visitable> visitableList = newArrayList();
 
-        visitableList.addAll(TestHelper.collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
+        visitableList.addAll(CollectionHelper.collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
 
         PreSale preSale = new PreSale("Ryan", "123-223-3223");
         for (final Visitable visitable : visitableList) {
