@@ -1,4 +1,4 @@
-package com.java.patterns.tests.decorator;
+package com.java.patterns.tests.decorator.decorators;
 
 
 import com.java.patterns.src.decorator.decorators.RumbaDecorator;
