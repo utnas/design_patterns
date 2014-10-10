@@ -1,4 +1,4 @@
-package com.java.patterns.src.decorator;
+package com.java.patterns.src.decorator.model;
 
 public class MusicSample implements Music {
     private final String melody;
@@ -18,7 +18,6 @@ public class MusicSample implements Music {
         return tempo;
     }
 
-    @Override
     public Music harmonize() {
         return MusicFactory.make(melody, tempo);
     }

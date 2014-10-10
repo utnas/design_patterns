@@ -1,6 +1,10 @@
-package com.java.patterns.src.decorator;
+package com.java.patterns.src.decorator.decorators;
 
-public class SalsaDecorator implements Music {
+import com.java.patterns.src.decorator.model.Music;
+import com.java.patterns.src.decorator.model.MusicFactory;
+import com.java.patterns.src.decorator.model.MusicSample;
+
+public class SalsaDecorator implements MusicDecorator {
     private final MusicSample music;
     private int tempo = 220;
 
@@ -8,7 +12,7 @@ public class SalsaDecorator implements Music {
         music = musicSample;
     }
 
-    public Music harmonize() {
+    public MusicSample harmonize() {
         return MusicFactory.make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
     }
 

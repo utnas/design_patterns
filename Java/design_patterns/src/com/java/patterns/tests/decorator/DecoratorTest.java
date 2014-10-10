@@ -1,9 +1,9 @@
 package com.java.patterns.tests.decorator;
 
 
-import com.java.patterns.src.decorator.MusicSample;
-import com.java.patterns.src.decorator.RumbaDecorator;
-import com.java.patterns.src.decorator.SalsaDecorator;
+import com.java.patterns.src.decorator.model.MusicSample;
+import com.java.patterns.src.decorator.decorators.RumbaDecorator;
+import com.java.patterns.src.decorator.decorators.SalsaDecorator;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
