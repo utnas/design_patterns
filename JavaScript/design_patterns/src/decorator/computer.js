@@ -1,9 +1,9 @@
 exports.Computer = function (model, basicPrice, size) {
     'use strict';
 
-    var _model = model;
-    var _cost = basicPrice;
-    var _screenSize = size;
+    var _model = model,
+        _cost = basicPrice,
+        _screenSize = size;
 
     this.getCost = function () {
         return _cost;

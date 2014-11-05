@@ -3,9 +3,9 @@ var Observer = require('./observer').Observer;
 exports.Observable = function () {
     'use strict';
 
-    var size = 0;
-    var observers = [];
-    var modifiers = {};
+    var size = 0,
+        observers = [],
+        modifiers = {};
 
     this.addObserver = function addObserver(observer) {
         if (observer instanceof Observer) {
