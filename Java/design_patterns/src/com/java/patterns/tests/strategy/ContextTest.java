@@ -32,4 +32,16 @@ public class ContextTest {
         final Context context = new Context(new Subtraction());
         assertThat(context.executeStrategy(3, 5), is(-2));
     }
+
+    @Test
+    public void contextDivisionShouldReturn2() {
+        final Context context = new Context(new Division());
+        assertThat(context.executeStrategy(10, 5), is(2));
+    }
+
+    @Test
+    public void contextSubtractionShouldRaiseException() {
+        final Context context = new Context(new Division());
+        assertThat(context.executeStrategy(5, 0), is(0));
+    }
 }

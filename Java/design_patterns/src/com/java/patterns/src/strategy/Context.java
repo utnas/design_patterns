@@ -8,6 +8,11 @@ public class Context {
     }
 
     public int executeStrategy(final int first, final int second) {
-        return strategy.executeStrategy(first, second);
+        try {
+            return strategy.executeStrategy(first, second);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }
