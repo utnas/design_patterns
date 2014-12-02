@@ -15,4 +15,10 @@ public class ContextTest {
         assertThat(context.executeStrategy(2, 3), is(5));
     }
 
+    @Test
+    public void contextAdditionShouldReturnZero() {
+        final Context context = new Context(new Addition());
+        assertThat(context.executeStrategy(0, 0), is(0));
+    }
+
 }
