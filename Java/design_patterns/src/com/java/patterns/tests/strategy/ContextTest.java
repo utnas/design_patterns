@@ -21,4 +21,15 @@ public class ContextTest {
         assertThat(context.executeStrategy(0, 0), is(0));
     }
 
+    @Test
+    public void contextSubtractionShouldReturn2() {
+        final Context context = new Context(new Subtraction());
+        assertThat(context.executeStrategy(5, 3), is(2));
+    }
+
+    @Test
+    public void contextSubtractionShouldReturnMinus2() {
+        final Context context = new Context(new Subtraction());
+        assertThat(context.executeStrategy(3, 5), is(-2));
+    }
 }
