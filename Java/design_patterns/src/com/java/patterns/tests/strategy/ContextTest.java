@@ -2,6 +2,8 @@ package com.java.patterns.tests.strategy;
 
 import com.java.patterns.src.strategy.Addition;
 import com.java.patterns.src.strategy.Context;
+import com.java.patterns.src.strategy.Division;
+import com.java.patterns.src.strategy.Subtraction;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;

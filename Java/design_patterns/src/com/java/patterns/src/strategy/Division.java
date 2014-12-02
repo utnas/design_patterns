@@ -1,4 +1,4 @@
-package com.java.patterns.tests.strategy;
+package com.java.patterns.src.strategy;
 
 import com.java.patterns.src.strategy.Strategy;
 
