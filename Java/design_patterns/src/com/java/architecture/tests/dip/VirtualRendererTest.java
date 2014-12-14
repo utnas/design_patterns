@@ -1,4 +1,4 @@
-package com.java.architecture.tests;
+package com.java.architecture.tests.dip;
 
 import com.java.architecture.src.dip.Content;
 import com.java.architecture.src.dip.VirtualRenderer;
