@@ -1,9 +1,9 @@
-package com.java.architecture.src.mvp;
+package com.java.architecture.src.mvp.model;
 
-public class Calculator {
+public class CalculatorModel implements ICalculator {
     private float defaultValue;
 
-    public Calculator() {
+    public CalculatorModel() {
         this.defaultValue = 0;
     }
 
