@@ -1,5 +1,6 @@
 package com.java.architecture.tests.mvp.view;
 
+import com.java.architecture.src.mvp.presenter.ICalculatorViewListener;
 import com.java.architecture.src.mvp.view.CalculatorEvent;
 import com.java.architecture.src.mvp.view.CalculatorViewImpl;
 import org.junit.Test;
@@ -18,7 +19,13 @@ public class CalculatorViewImplTest {
     @Test
     public void itShouldAddListener() {
         final CalculatorViewImpl calculatorView = new CalculatorViewImpl();
-        assertThat(calculatorView.addListener(), is(CalculatorEvent.LISTENER_ADDED));
+        final ICalculatorViewListener listener = new ICalculatorViewListener() {
+            public CalculatorEvent clickButton() {
+                return CalculatorEvent.BUTTON_CLICKED;
+            }
+        };
+        calculatorView.addListener(listener);
+        assertThat(calculatorView.getDisplay(), is(""));
     }
 
 }

@@ -18,14 +18,14 @@ public class CalculatorViewImpl implements ICalculatorView {
         return display.setValue(value);
     }
 
-    @Override
-    public CalculatorEvent addListener() {
-        return CalculatorEvent.LISTENER_ADDED;
-    }
 
     @Override
     public void addListener(final ICalculatorViewListener listener) {
         listeners.add(listener);
+    }
+
+    public String getDisplay() {
+        return display.getField();
     }
 
     private class Display {

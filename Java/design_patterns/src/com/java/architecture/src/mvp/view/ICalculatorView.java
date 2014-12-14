@@ -6,7 +6,5 @@ public interface ICalculatorView {
 
     public CalculatorEvent setDisplay(final float value);
 
-    public CalculatorEvent addListener();
-
     public void addListener(final ICalculatorViewListener listener);
 }
