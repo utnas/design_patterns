@@ -10,6 +10,6 @@ public class CalculatorViewImpl implements ICalculatorView {
 
     @Override
     public CalculatorEvent addListener() {
-        return CalculatorEvent.LISTNER_ADDED;
+        return CalculatorEvent.LISTENER_ADDED;
     }
 }

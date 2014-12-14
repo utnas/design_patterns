@@ -18,7 +18,7 @@ public class CalculatorViewImplTest {
     @Test
     public void itShouldAddListener() {
         final CalculatorViewImpl calculatorView = new CalculatorViewImpl();
-        assertThat(calculatorView.addListener(), is(CalculatorEvent.LISTNER_ADDED));
+        assertThat(calculatorView.addListener(), is(CalculatorEvent.LISTENER_ADDED));
     }
 
 }
