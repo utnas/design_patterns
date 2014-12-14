@@ -12,7 +12,7 @@ public class CalculatorViewImplTest {
     @Test
     public void itShouldSetDisplay() {
         final CalculatorViewImpl calculatorView = new CalculatorViewImpl();
-        assertThat(calculatorView.setDisplay(), is(CalculatorEvent.SET_DISPLAY));
+        assertThat(calculatorView.setDisplay(8), is(CalculatorEvent.SET_DISPLAY));
     }
 
     @Test
