@@ -3,9 +3,9 @@ package com.java.patterns.tests.strategy;
 import com.java.patterns.src.strategy.Addition;
 import com.java.patterns.src.strategy.Context;
 import com.java.patterns.src.strategy.Division;
-import com.java.patterns.src.strategy.Subtraction;
 import org.junit.Test;
 
+import static java.lang.Float.POSITIVE_INFINITY;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -13,37 +13,37 @@ public class ContextTest {
 
     @Test
     public void contextAddition() {
-        final Context context = new Context(new Addition());
-        assertThat(context.executeStrategy(2, 3), is(5));
+        final Context context = new Context(new Addition(2F, 3F));
+        assertThat(context.executeStrategy(), is(5F));
     }
 
     @Test
     public void contextAdditionShouldReturnZero() {
-        final Context context = new Context(new Addition());
-        assertThat(context.executeStrategy(0, 0), is(0));
+        final Context context = new Context(new Addition(0F, 0F));
+        assertThat(context.executeStrategy(), is(0F));
     }
 
     @Test
     public void contextSubtractionShouldReturn2() {
-        final Context context = new Context(new Subtraction());
-        assertThat(context.executeStrategy(5, 3), is(2));
+        final Context context = new Context(new Addition(5F, -3F));
+        assertThat(context.executeStrategy(), is(2F));
     }
 
     @Test
     public void contextSubtractionShouldReturnMinus2() {
-        final Context context = new Context(new Subtraction());
-        assertThat(context.executeStrategy(3, 5), is(-2));
+        final Context context = new Context(new Addition(3, -5));
+        assertThat(context.executeStrategy(), is(-2F));
     }
 
     @Test
     public void contextDivisionShouldReturn2() {
-        final Context context = new Context(new Division());
-        assertThat(context.executeStrategy(10, 5), is(2));
+        final Context context = new Context(new Division(4F, 2F));
+        assertThat(context.executeStrategy(), is(2F));
     }
 
     @Test
-    public void contextSubtractionShouldRaiseException() {
-        final Context context = new Context(new Division());
-        assertThat(context.executeStrategy(5, 0), is(0));
+    public void contextSubtractionShouldReturnInfinity() {
+        final Context context = new Context(new Division(23, 0));
+        assertThat(context.executeStrategy(), is(POSITIVE_INFINITY));
     }
 }

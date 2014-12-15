@@ -10,7 +10,7 @@ public class CalculatorViewImpl implements ICalculatorView {
     private Display display;
 
     public CalculatorViewImpl() {
-        this.display = new Display("");
+        this.display = new Display(0);
     }
 
     @Override
@@ -24,23 +24,23 @@ public class CalculatorViewImpl implements ICalculatorView {
         listeners.add(listener);
     }
 
-    public String getDisplay() {
+    public float getDisplay() {
         return display.getField();
     }
 
     private class Display {
-        private String field;
+        private float field;
 
-        private Display(String field) {
+        private Display(final float field) {
             this.field = field;
         }
 
         public CalculatorEvent setValue(final float value) {
-            field = String.valueOf(value);
+            field = value;
             return CalculatorEvent.SET_DISPLAY;
         }
 
-        public String getField() {
+        public float getField() {
             return field;
         }
     }

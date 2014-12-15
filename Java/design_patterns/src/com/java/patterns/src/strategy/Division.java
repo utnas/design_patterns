@@ -1,13 +1,16 @@
 package com.java.patterns.src.strategy;
 
-import com.java.patterns.src.strategy.Strategy;
-
 public class Division implements Strategy {
+    private float first;
+    private float second;
+
+    public Division(float first, float second) {
+        this.first = first;
+        this.second = second;
+    }
+
     @Override
-    public int executeStrategy(int first, int second) throws Exception {
-        if (second != 0) {
-            return first / second;
-        }
-        throw new Exception("Division impossible");
+    public float executeStrategy() {
+        return first / second;
     }
 }

@@ -3,16 +3,11 @@ package com.java.patterns.src.strategy;
 public class Context {
     private final Strategy strategy;
 
-    public Context(final Strategy addition) {
-        this.strategy = addition;
+    public Context(final Strategy strategy) {
+        this.strategy = strategy;
     }
 
-    public int executeStrategy(final int first, final int second) {
-        try {
-            return strategy.executeStrategy(first, second);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
+    public float executeStrategy() {
+        return strategy.executeStrategy();
     }
 }
