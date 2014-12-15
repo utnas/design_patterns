@@ -10,7 +10,7 @@ public class Division implements Strategy {
     }
 
     @Override
-    public float executeStrategy() {
+    public float execute() {
         return first / second;
     }
 }

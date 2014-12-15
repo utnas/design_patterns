@@ -3,6 +3,7 @@ package com.java.patterns.tests.strategy;
 import com.java.patterns.src.strategy.Addition;
 import com.java.patterns.src.strategy.Context;
 import com.java.patterns.src.strategy.Division;
+import com.java.patterns.src.strategy.Multiplication;
 import org.junit.Test;
 
 import static java.lang.Float.POSITIVE_INFINITY;
@@ -45,5 +46,11 @@ public class ContextTest {
     public void contextSubtractionShouldReturnInfinity() {
         final Context context = new Context(new Division(23, 0));
         assertThat(context.executeStrategy(), is(POSITIVE_INFINITY));
+    }
+
+    @Test
+    public void contextMultiplicationShouldReturn15() {
+        final Context context = new Context(new Multiplication(3F, 5F));
+        assertThat(context.executeStrategy(), is(15F));
     }
 }

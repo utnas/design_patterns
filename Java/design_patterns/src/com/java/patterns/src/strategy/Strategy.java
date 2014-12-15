@@ -1,5 +1,5 @@
 package com.java.patterns.src.strategy;
 
 public interface Strategy {
-    public float executeStrategy();
+    public float execute();
 }

@@ -8,6 +8,6 @@ public class Context {
     }
 
     public float executeStrategy() {
-        return strategy.executeStrategy();
+        return strategy.execute();
     }
 }
