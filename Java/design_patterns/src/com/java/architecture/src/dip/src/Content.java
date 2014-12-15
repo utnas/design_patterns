@@ -1,4 +1,4 @@
-package com.java.architecture.src.dip;
+package com.java.architecture.src.dip.src;
 // https://www.dotnetdojo.com/concevoir-des-applications-solid-lsp/
 
 public class Content implements IContent {

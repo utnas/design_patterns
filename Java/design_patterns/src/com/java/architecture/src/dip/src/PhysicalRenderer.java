@@ -1,4 +1,4 @@
-package com.java.architecture.src.dip;
+package com.java.architecture.src.dip.src;
 
 public class PhysicalRenderer implements IRenderer {
     private final IContent content;

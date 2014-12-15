@@ -1,8 +1,8 @@
 package com.java.architecture.tests.dip;
 
 
-import com.java.architecture.src.dip.Content;
-import com.java.architecture.src.dip.PhysicalRenderer;
+import com.java.architecture.src.dip.src.Content;
+import com.java.architecture.src.dip.src.PhysicalRenderer;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
