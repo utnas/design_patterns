@@ -2,7 +2,7 @@ package com.java.architecture.src.mvc.orm;
 
 import com.java.architecture.src.mvc.model.Pizza;
 
-public interface ORM {
+public interface IStorage {
     public boolean add(final Object name);
 
     public boolean delete(final String name);

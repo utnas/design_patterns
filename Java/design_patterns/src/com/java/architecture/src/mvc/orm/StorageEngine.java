@@ -2,7 +2,7 @@ package com.java.architecture.src.mvc.orm;
 
 import com.java.architecture.src.mvc.model.Pizza;
 
-public class StorageEngine implements ORM{
+public class StorageEngine implements IStorage {
 
     public boolean add(final Object name) {
         return true;
@@ -13,7 +13,7 @@ public class StorageEngine implements ORM{
     }
 
     public Pizza get(final String name) {
-        return (Pizza) new Object();
+        return new Pizza("");
     }
 
     public boolean set(final String from, final String to) {
