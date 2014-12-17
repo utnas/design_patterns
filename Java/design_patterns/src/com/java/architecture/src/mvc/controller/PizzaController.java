@@ -1,10 +1,11 @@
 package com.java.architecture.src.mvc.controller;
 
 import com.java.architecture.src.mvc.model.Pizza;
-import com.java.architecture.src.mvc.orm.StorageEngine;
+import com.java.architecture.src.mvc.util.IStorage;
+import com.java.architecture.src.mvc.util.StorageEngine;
 
 public class PizzaController {
-    final StorageEngine storageEngine = new StorageEngine();
+    final IStorage storageEngine = new StorageEngine();
 
     public boolean createPizza(final String nameOfPizza) {
         return storageEngine.add(new Pizza(nameOfPizza));

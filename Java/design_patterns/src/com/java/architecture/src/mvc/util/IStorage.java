@@ -1,4 +1,4 @@
-package com.java.architecture.src.mvc.orm;
+package com.java.architecture.src.mvc.util;
 
 import com.java.architecture.src.mvc.model.Pizza;
 
