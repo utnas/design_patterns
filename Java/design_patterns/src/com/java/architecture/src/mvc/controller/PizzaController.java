@@ -1,8 +1,8 @@
 package com.java.architecture.src.mvc.controller;
 
 import com.java.architecture.src.mvc.model.Pizza;
-import com.java.architecture.src.mvc.util.IStorage;
-import com.java.architecture.src.mvc.util.StorageEngine;
+import com.java.architecture.src.mvc.utils.storage.IStorage;
+import com.java.architecture.src.mvc.utils.storage.StorageEngine;
 
 public class PizzaController {
     final IStorage storageEngine = new StorageEngine();
