@@ -1,22 +1,25 @@
 package com.java.architecture.src.mvc.utils.storage;
 
-import com.java.architecture.src.mvc.model.Pizza;
+import java.util.ArrayList;
 
-public class StorageEngine implements IStorage {
+import static com.google.common.collect.Lists.newArrayList;
 
-    public boolean add(final Object name) {
-        return true;
+
+public class StorageEngine<T> implements IStorage {
+    final ArrayList store = newArrayList();
+
+    public void set(final String from, final String to) {
     }
 
-    public boolean delete(final String name) {
-        return true;
+    public <T> T add(final Object name, StorageResultHandler<T> resultHandler) {
+        return resultHandler.handle(name, store);
     }
 
-    public Pizza get(final String name) {
-        return new Pizza("");
+    public <T> T delete(final String name, StorageResultHandler<T> resultHandler) {
+        return resultHandler.handle(name, store);
     }
 
-    public boolean set(final String from, final String to) {
-        return true;
+    public <T> T get(final String name, StorageResultHandler<T> resultHandler) {
+        return resultHandler.handle(name, store);
     }
 }

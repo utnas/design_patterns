@@ -1,13 +1,11 @@
 package com.java.architecture.src.mvc.utils.storage;
 
-import com.java.architecture.src.mvc.model.Pizza;
-
 public interface IStorage {
-    public boolean add(final Object name);
+    public <T> T add(final Object name, final StorageResultHandler<T> resultHandler);
 
-    public boolean delete(final String name);
+    public <T> T delete(final String name, final StorageResultHandler<T> resultHandler);
 
-    public Pizza get(final String name);
+    public <T> T get(final String name, final StorageResultHandler<T> resultHandler);
 
-    public boolean set(final String from, final String to);
+    public void set(final String from, final String to);
 }
