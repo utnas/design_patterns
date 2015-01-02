@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class StorageEngineTest {
     @Test
     public void addTest() {
-        final StorageEngine<Boolean> storageEngine = new StorageEngine<Boolean>();
+        final StorageEngine storageEngine = new StorageEngine();
         assertThat(storageEngine.add("New Object", new StorageResultHandler<Boolean>() {
             @Override
             public Boolean handle(final String subject, ArrayList store) {

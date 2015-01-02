@@ -11,6 +11,7 @@ public class PizzaOrderingView {
     }
 
     public Pizza order(final String name) {
+        controller.createPizza(name);
         return controller.readPizza(name);
     }
 }

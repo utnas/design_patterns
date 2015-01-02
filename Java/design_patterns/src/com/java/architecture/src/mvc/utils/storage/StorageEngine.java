@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import static com.google.common.collect.Lists.newArrayList;
 
 
-public final class StorageEngine<T> implements IStorage {
+public final class StorageEngine implements IStorage {
     final ArrayList store = newArrayList();
 
     public void set(final String from, Pizza toBeStored) {
