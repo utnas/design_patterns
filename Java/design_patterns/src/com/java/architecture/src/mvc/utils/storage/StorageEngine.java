@@ -11,7 +11,7 @@ import static com.google.common.collect.Lists.newArrayList;
 public final class StorageEngine implements IStorage {
     final ArrayList store = newArrayList();
 
-    public void set(final String from, Pizza toBeStored) {
+    public void set(final String from, final Pizza toBeStored) {
         final Pizza pizza = CollectionHelper.getPizza(from, store);
         if (pizza != null) {
             store.add(toBeStored);
@@ -19,15 +19,15 @@ public final class StorageEngine implements IStorage {
         }
     }
 
-    public <T> T add(final String name, StorageResultHandler<T> resultHandler) {
+    public <T> T add(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 
-    public <T> T delete(final String name, StorageResultHandler<T> resultHandler) {
+    public <T> T delete(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 
-    public <T> T get(final String name, StorageResultHandler<T> resultHandler) {
+    public <T> T get(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 }

@@ -12,7 +12,7 @@ public class PizzaStorageEngineImpl {
         storageEngine = new StorageEngine();
     }
 
-    public Boolean addPizza(String nameOfPizza) {
+    public Boolean addPizza(final String nameOfPizza) {
         return storageEngine.add(nameOfPizza, new StorageResultHandler<Boolean>() {
             public Boolean handle(final String subject, final ArrayList store) {
                 return store.add(new Pizza(subject));

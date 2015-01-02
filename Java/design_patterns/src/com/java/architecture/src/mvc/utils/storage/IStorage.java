@@ -9,5 +9,5 @@ public interface IStorage {
 
     public <T> T get(final String name, final StorageResultHandler<T> resultHandler);
 
-    public void set(final String from, Pizza toBeStored);
+    public void set(final String from, final Pizza toBeStored);
 }
