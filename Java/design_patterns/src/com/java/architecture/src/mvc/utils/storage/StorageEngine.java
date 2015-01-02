@@ -11,10 +11,10 @@ import static com.google.common.collect.Lists.newArrayList;
 public final class StorageEngine<T> implements IStorage {
     final ArrayList store = newArrayList();
 
-    public void set(final String from, final String to) {
+    public void set(final String from, Pizza toBeStored) {
         final Pizza pizza = CollectionHelper.getPizza(from, store);
         if (pizza != null) {
-            store.add(new Pizza(to));
+            store.add(toBeStored);
             store.remove(from);
         }
     }

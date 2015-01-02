@@ -12,7 +12,6 @@ public class PizzaStorageEngineImpl {
         storageEngine = new StorageEngine();
     }
 
-
     public Boolean addPizza(String nameOfPizza) {
         return (Boolean) storageEngine.add(nameOfPizza, new StorageResultHandler<Boolean>() {
             public Boolean handle(final String subject, final ArrayList store) {
@@ -38,9 +37,8 @@ public class PizzaStorageEngineImpl {
         });
     }
 
-
     public void replacePizza(final String from, final String to) {
-        storageEngine.set(from, to);
+        storageEngine.set(from, new Pizza(to));
     }
 
 }
