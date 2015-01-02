@@ -26,9 +26,10 @@ public class PizzaControllerTest {
 
     @Test
     public void updatePizzaTest() {
-        final PizzaController mock = mock(PizzaController.class);
-        //when(mock.updatePizza("Margarita", "Hot Margarita")).thenReturn(true);
-        //assertThat(mock.updatePizza("Margarita", "Hot Margarita"), is(true));
+        final PizzaController pizzaController = new PizzaController();
+        pizzaController.createPizza("Margarita");
+        pizzaController.updatePizza("Margarita", "Hot Margarita");
+        assertThat(pizzaController.readPizza("Hot Margarita").getRealName(), is("Hot Margarita"));
     }
 
     @Test

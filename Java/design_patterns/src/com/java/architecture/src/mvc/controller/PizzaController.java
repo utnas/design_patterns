@@ -1,52 +1,24 @@
 package com.java.architecture.src.mvc.controller;
 
 import com.java.architecture.src.mvc.model.Pizza;
-import com.java.architecture.src.mvc.utils.storage.IStorage;
-import com.java.architecture.src.mvc.utils.storage.StorageEngine;
-import com.java.architecture.src.mvc.utils.storage.StorageResultHandler;
-
-import java.util.ArrayList;
+import com.java.architecture.src.mvc.utils.storage.PizzaStorageEngineImpl;
 
 public class PizzaController {
-    final IStorage storageEngine = new StorageEngine();
+    final PizzaStorageEngineImpl storageEngine = new PizzaStorageEngineImpl();
 
-    public boolean createPizza(final String nameOfPizza) {
-        return storageEngine.add(nameOfPizza, new StorageResultHandler<Boolean>() {
-            public Boolean handle(Object subject, ArrayList store) {
-                return store.add(subject);
-            }
-        });
+    public Boolean createPizza(final String nameOfPizza) {
+        return storageEngine.addPizza(nameOfPizza);
     }
 
-    public boolean deletePizza(final String nameOfPizza) {
-        return storageEngine.delete(nameOfPizza, new StorageResultHandler<Boolean>() {
-            public Boolean handle(Object subject, ArrayList store) {
-                return store.remove(subject);
-            }
-        });
+    public Boolean deletePizza(final String nameOfPizza) {
+        return (Boolean) storageEngine.removePizza(nameOfPizza);
     }
 
     public Pizza readPizza(final String name) {
-        return storageEngine.get(name, new StorageResultHandler<Pizza>() {
-                    public Pizza handle(Object subject, ArrayList store) {
-                        return find((String) subject, store);
-                    }
-
-                    private Pizza find(final String subject, ArrayList store) {
-                        if (store.contains(subject)) {
-                            for (final Object stored : store) {
-                                if (((Pizza) stored).getRealName().equals(subject)) {
-                                    return (Pizza) stored;
-                                }
-                            }
-                        }
-                        return null;
-                    }
-                }
-        );
+        return (Pizza) storageEngine.getPizza(name);
     }
 
     public void updatePizza(final String from, final String to) {
-        storageEngine.set(from, to);
+        storageEngine.replacePizza(from, to);
     }
 }

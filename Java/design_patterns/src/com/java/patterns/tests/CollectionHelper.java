@@ -1,5 +1,6 @@
 package com.java.patterns.tests;
 
+import com.java.architecture.src.mvc.model.Pizza;
 import com.java.patterns.src.observer.User;
 import com.java.patterns.src.visitor.Appointment;
 import com.java.patterns.src.visitor.Visitable;
@@ -45,6 +46,16 @@ public class CollectionHelper {
             result.add(appointment.getPartnerName());
         }
         return unmodifiableList(result);
+    }
+
+
+    public static Pizza getPizza(final String subject, final ArrayList store) {
+        for (final Object storedElement : store) {
+            if (((Pizza) storedElement).getRealName().equals(subject)) {
+                return (Pizza) storedElement;
+            }
+        }
+        return null;
     }
 
     public static User createUser(final String userName) {

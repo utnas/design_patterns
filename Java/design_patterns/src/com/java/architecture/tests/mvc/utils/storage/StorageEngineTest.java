@@ -15,7 +15,7 @@ public class StorageEngineTest {
         final StorageEngine<Boolean> storageEngine = new StorageEngine<Boolean>();
         assertThat(storageEngine.add("New Object", new StorageResultHandler<Boolean>() {
             @Override
-            public Boolean handle(Object subject, ArrayList store) {
+            public Boolean handle(final String subject, ArrayList store) {
                 return store.add(subject);
             }
         }), is(true));
