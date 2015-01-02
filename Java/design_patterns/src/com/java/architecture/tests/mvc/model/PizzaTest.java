@@ -11,14 +11,14 @@ public class PizzaTest {
 
     @Test
     public void itShouldCreateAPizza() {
-        final Pizza pizza = new Pizza("The Name of my pizza");
+        final Pizza pizza = new Pizza("The Name of my concreate");
         pizza.addIngredient(new Ingredient("Cheat"));
         assertThat(pizza.getRealName(), is("The Name of my pizzaCheat"));
     }
 
     @Test
     public void itShouldGiveNameOfPizza() {
-        final Pizza pizza = new Pizza("The Name of my pizza");
+        final Pizza pizza = new Pizza("The Name of my concreate");
         pizza.addIngredient(new Ingredient("Cheat"));
         assertThat(pizza.getRealName(), is("The Name of my pizzaCheat"));
     }

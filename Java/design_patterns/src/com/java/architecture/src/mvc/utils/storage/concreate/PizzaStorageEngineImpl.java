@@ -1,6 +1,8 @@
-package com.java.architecture.src.mvc.utils.storage;
+package com.java.architecture.src.mvc.utils.storage.concreate;
 
 import com.java.architecture.src.mvc.model.Pizza;
+import com.java.architecture.src.mvc.utils.storage.generic.StorageEngine;
+import com.java.architecture.src.mvc.utils.storage.generic.StorageResultHandler;
 import com.java.patterns.tests.CollectionHelper;
 
 import java.util.ArrayList;

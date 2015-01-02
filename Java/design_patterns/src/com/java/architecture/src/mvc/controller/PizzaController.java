@@ -1,7 +1,7 @@
 package com.java.architecture.src.mvc.controller;
 
 import com.java.architecture.src.mvc.model.Pizza;
-import com.java.architecture.src.mvc.utils.storage.PizzaStorageEngineImpl;
+import com.java.architecture.src.mvc.utils.storage.concreate.PizzaStorageEngineImpl;
 
 public class PizzaController {
     final PizzaStorageEngineImpl storageEngine = new PizzaStorageEngineImpl();

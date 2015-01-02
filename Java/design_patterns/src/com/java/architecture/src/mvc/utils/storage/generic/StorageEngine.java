@@ -1,4 +1,4 @@
-package com.java.architecture.src.mvc.utils.storage;
+package com.java.architecture.src.mvc.utils.storage.generic;
 
 import com.java.architecture.src.mvc.model.Pizza;
 import com.java.patterns.tests.CollectionHelper;

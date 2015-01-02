@@ -1,7 +1,7 @@
 package com.java.architecture.tests.mvc.utils.storage;
 
-import com.java.architecture.src.mvc.utils.storage.StorageEngine;
-import com.java.architecture.src.mvc.utils.storage.StorageResultHandler;
+import com.java.architecture.src.mvc.utils.storage.generic.StorageEngine;
+import com.java.architecture.src.mvc.utils.storage.generic.StorageResultHandler;
 import org.junit.Test;
 
 import java.util.ArrayList;

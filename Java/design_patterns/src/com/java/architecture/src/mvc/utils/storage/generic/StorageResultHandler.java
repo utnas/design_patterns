@@ -1,4 +1,4 @@
-package com.java.architecture.src.mvc.utils.storage;
+package com.java.architecture.src.mvc.utils.storage.generic;
 
 import java.util.ArrayList;
 
