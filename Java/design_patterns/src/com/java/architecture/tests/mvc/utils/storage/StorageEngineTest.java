@@ -11,7 +11,7 @@ import static org.junit.Assert.assertThat;
 
 public class StorageEngineTest {
     @Test
-    public void addTest() {
+    public void itShouldAddElementInToAStorageSystem() {
         final StorageEngine storageEngine = new StorageEngine();
         assertThat(storageEngine.add("New Object", new StorageResultHandler<Boolean>() {
             @Override

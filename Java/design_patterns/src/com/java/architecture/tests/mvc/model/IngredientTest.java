@@ -9,7 +9,7 @@ import static org.junit.Assert.assertThat;
 public class IngredientTest {
 
     @Test
-    public void itShouldCreateAnIngredientT() {
+    public void itShouldCreateAnIngredient() {
         final Ingredient ingredient = new Ingredient("Name of my ingredient");
         assertThat(ingredient.getName(), is("Name of my ingredient"));
     }
