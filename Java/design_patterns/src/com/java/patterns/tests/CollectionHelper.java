@@ -20,7 +20,7 @@ public class CollectionHelper {
 
     public static Matcher<List<?>> hasValues(final String... values) {
         return new BaseMatcher<List<?>>() {
-            public boolean matches(Object objects) {
+            public boolean matches(final Object objects) {
                 if (values.length == 0) {
                     return isEmpty((Iterable<?>) objects);
                 } else {
@@ -28,7 +28,7 @@ public class CollectionHelper {
                 }
             }
 
-            public void describeTo(Description description) {
+            public void describeTo(final Description description) {
                 // do nothing
             }
         };
@@ -55,7 +55,7 @@ public class CollectionHelper {
                 return (Pizza) storedElement;
             }
         }
-        return null;
+        return new Pizza("");
     }
 
     public static User createUser(final String userName) {

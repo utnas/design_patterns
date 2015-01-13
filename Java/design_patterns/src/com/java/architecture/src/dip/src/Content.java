@@ -1,15 +1,15 @@
 package com.java.architecture.src.dip.src;
 // https://www.dotnetdojo.com/concevoir-des-applications-solid-lsp/
 
-public class Content implements IContent {
+public class Content<T> implements IContent {
 
-    private final String message;
+    private final T message;
 
-    public Content(final String message) {
+    public Content(final T message) {
         this.message = message;
     }
 
-    public String getMessage() {
+    public T getMessage() {
         return message;
     }
 }

@@ -1,5 +1,6 @@
-exports.Car = function (options) {
+module.exports.Car = (function (options) {
     'use strict';
+
     var _options = {};
 
     if (options !== undefined) {
@@ -11,4 +12,4 @@ exports.Car = function (options) {
     this.getOptions = function () {
         return _options;
     };
-};
+});

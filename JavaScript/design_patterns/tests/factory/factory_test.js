@@ -1,7 +1,6 @@
-var Factory = require('../../src/factory/car_factory').Factory;
-var Car = require('../../src/factory/car').Car;
-
-var assert = require('assert');
+var Factory = require('../../src/factory/car_factory').Factory,
+    Car = require('../../src/factory/car').Car,
+    assert = require('assert');
 
 describe('Factory pattern', function () {
     'use strict';

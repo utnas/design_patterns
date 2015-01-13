@@ -1,6 +1,6 @@
 var Observer = require('./observer').Observer;
 
-exports.Observable = function () {
+exports.Observable = (function () {
     'use strict';
 
     var size = 0,
@@ -54,4 +54,4 @@ exports.Observable = function () {
     this.getModifiers = function () {
         return modifiers;
     };
-};
+});

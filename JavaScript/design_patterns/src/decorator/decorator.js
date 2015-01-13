@@ -1,6 +1,6 @@
 var Computer = require('./computer').Computer;
 
-exports.Decorator = function () {
+exports.Decorator = (function () {
     'use strict';
 
     this.memory = function memory(computer) {
@@ -20,4 +20,4 @@ exports.Decorator = function () {
             }
         }
     };
-};
+});

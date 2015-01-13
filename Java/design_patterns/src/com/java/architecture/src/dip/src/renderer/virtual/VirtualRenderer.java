@@ -1,17 +1,17 @@
-package com.java.architecture.src.dip.src;
+package com.java.architecture.src.dip.src.renderer.virtual;
 
 import com.java.architecture.src.dip.src.IContent;
-import com.java.architecture.src.dip.src.IRenderer;
+import com.java.architecture.src.dip.src.renderer.IRenderer;
 
-public class VirtualRenderer implements IRenderer {
+public class VirtualRenderer<T> implements IRenderer {
     private final IContent content;
 
     public VirtualRenderer(final IContent content) {
         this.content = content;
     }
 
-    public String getContent() {
-        return content.getMessage();
+    public T getContent() {
+        return (T) content.getMessage();
     }
 
     public IContent displayResult() {

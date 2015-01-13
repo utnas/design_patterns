@@ -1,7 +1,6 @@
-var Code = require('../../src/facade/code').Code;
-var User = require('../../src/facade/user').User;
-
-var assert = require('assert');
+var Code = require('../../src/facade/code').Code,
+    User = require('../../src/facade/user').User,
+    assert = require('assert');
 
 describe('Code facade tests', function () {
     'use strict';

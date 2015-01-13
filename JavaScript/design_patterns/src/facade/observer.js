@@ -1,7 +1,8 @@
 var Observable = require('./observable').Observable;
 
-exports.Observer = function (userName) {
+exports.Observer = (function (userName) {
     'use strict';
+
     var name = userName,
         lastNotification = '';
 
@@ -20,4 +21,4 @@ exports.Observer = function (userName) {
     this.getLastNotification = function () {
         return lastNotification;
     };
-};
+});

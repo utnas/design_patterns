@@ -1,7 +1,7 @@
 package com.java.architecture.tests.dip;
 
 import com.java.architecture.src.dip.src.Content;
-import com.java.architecture.src.dip.src.VirtualRenderer;
+import com.java.architecture.src.dip.src.renderer.virtual.VirtualRenderer;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
@@ -11,7 +11,7 @@ public class VirtualRendererTest {
 
     @Test
     public void displayResultTest() {
-        final VirtualRenderer virtualRenderer = new VirtualRenderer(new Content("Hello"));
+        final VirtualRenderer<String> virtualRenderer = new VirtualRenderer<String>(new Content<String>("Hello"));
         assertThat(virtualRenderer.getContent(), is("Hello"));
     }
 
