@@ -13,7 +13,7 @@ public class PhysicalRendererTest {
 
     @Test
     public void testShowResult() {
-        final PhysicalRenderer<IContent> physicalRenderer = new PhysicalRenderer<>(new Content("Content"));
+        final PhysicalRenderer<IContent> physicalRenderer = new PhysicalRenderer<>(new Content<String>("Content"));
         String message = physicalRenderer.displayResult();
         assertThat(message, is("Content"));
     }
