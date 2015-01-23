@@ -13,9 +13,9 @@ public class PhysicalRendererTest {
 
     @Test
     public void testShowResult() {
-        final PhysicalRenderer<IContent> physicalRenderer = new PhysicalRenderer<IContent>(new Content<String>("Content"));
-        final IContent<String> iContent = physicalRenderer.displayResult();
-        assertThat(iContent.getMessage(), is("Content"));
+        final PhysicalRenderer<IContent> physicalRenderer = new PhysicalRenderer<>(new Content("Content"));
+        String message = physicalRenderer.displayResult();
+        assertThat(message, is("Content"));
     }
 
 }

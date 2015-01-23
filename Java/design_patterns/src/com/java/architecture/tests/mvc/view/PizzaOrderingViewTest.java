@@ -1,6 +1,6 @@
 package com.java.architecture.tests.mvc.view;
 
-import com.java.architecture.src.mvc.model.Pizza;
+import com.java.architecture.src.mvc.model.ConcretePizza;
 import com.java.architecture.src.mvc.view.PizzaOrderingView;
 import org.junit.Test;
 
@@ -14,9 +14,9 @@ public class PizzaOrderingViewTest {
     @Test
     public void itShouldOrderAPizza() {
         final PizzaOrderingView mock = mock(PizzaOrderingView.class);
-        when(mock.order("Margareta")).thenReturn(new Pizza("Margareta"));
+        when(mock.order("Margareta")).thenReturn(new ConcretePizza("Margareta"));
 
-        final Pizza pizza = mock.order("Margareta");
+        final ConcretePizza pizza = mock.order("Margareta");
         assertThat(pizza.getRealName(), is("Margareta"));
 
     }

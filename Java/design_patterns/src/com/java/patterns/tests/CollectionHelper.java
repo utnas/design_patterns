@@ -1,6 +1,6 @@
 package com.java.patterns.tests;
 
-import com.java.architecture.src.mvc.model.Pizza;
+import com.java.architecture.src.mvc.model.ConcretePizza;
 import com.java.patterns.src.observer.User;
 import com.java.patterns.src.visitor.Appointment;
 import com.java.patterns.src.visitor.Visitable;
@@ -11,6 +11,7 @@ import org.hamcrest.Matcher;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static com.google.common.collect.Iterables.isEmpty;
 import static com.google.common.collect.Lists.newArrayList;
@@ -42,20 +43,18 @@ public class CollectionHelper {
 
     public static List<String> toStringList(final List<Appointment> appointments) {
         List<String> result = newArrayList();
-        for (final Appointment appointment : appointments) {
-            result.add(appointment.getPartnerName());
-        }
+        result.addAll(appointments.stream().map(Appointment::getPartnerName).collect(Collectors.toList()));
         return unmodifiableList(result);
     }
 
 
-    public static Pizza getPizza(final String subject, final ArrayList store) {
+    public static ConcretePizza getPizza(final String subject, final ArrayList<ConcretePizza> store) {
         for (final Object storedElement : store) {
-            if (((Pizza) storedElement).getRealName().equals(subject)) {
-                return (Pizza) storedElement;
+            if (((ConcretePizza) storedElement).getRealName().equals(subject)) {
+                return (ConcretePizza) storedElement;
             }
         }
-        return new Pizza("");
+        return new ConcretePizza("");
     }
 
     public static User createUser(final String userName) {

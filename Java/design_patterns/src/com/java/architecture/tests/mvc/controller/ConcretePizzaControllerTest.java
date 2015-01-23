@@ -6,7 +6,7 @@ import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class PizzaControllerTest {
+public class ConcretePizzaControllerTest {
 
     @Test
     public void createPizzaTest() {

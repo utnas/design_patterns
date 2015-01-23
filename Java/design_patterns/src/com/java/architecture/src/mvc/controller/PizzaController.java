@@ -1,6 +1,6 @@
 package com.java.architecture.src.mvc.controller;
 
-import com.java.architecture.src.mvc.model.Pizza;
+import com.java.architecture.src.mvc.model.ConcretePizza;
 import com.java.architecture.src.mvc.utils.storage.concreate.PizzaStorageEngineImpl;
 
 public class PizzaController {
@@ -14,8 +14,8 @@ public class PizzaController {
         return (Boolean) storageEngine.removePizza(nameOfPizza);
     }
 
-    public Pizza readPizza(final String name) {
-        return (Pizza) storageEngine.getPizza(name);
+    public ConcretePizza readPizza(final String name) {
+        return (ConcretePizza) storageEngine.getPizza(name);
     }
 
     public void updatePizza(final String from, final String to) {

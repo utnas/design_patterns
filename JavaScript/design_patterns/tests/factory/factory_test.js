@@ -1,9 +1,8 @@
 var Factory = require('../../src/factory/car_factory').Factory,
-    Car = require('../../src/factory/car').Car,
+    Car = require('../../src/factory/car'),
     assert = require('assert');
 
 describe('Factory pattern', function () {
-    'use strict';
 
     describe('Get options of a car_module', function () {
 

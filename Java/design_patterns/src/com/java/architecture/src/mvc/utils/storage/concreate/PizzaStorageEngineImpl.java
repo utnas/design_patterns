@@ -1,6 +1,6 @@
 package com.java.architecture.src.mvc.utils.storage.concreate;
 
-import com.java.architecture.src.mvc.model.Pizza;
+import com.java.architecture.src.mvc.model.ConcretePizza;
 import com.java.architecture.src.mvc.utils.storage.generic.StorageEngine;
 import com.java.architecture.src.mvc.utils.storage.generic.StorageResultHandler;
 import com.java.patterns.tests.CollectionHelper;
@@ -15,11 +15,7 @@ public class PizzaStorageEngineImpl {
     }
 
     public Boolean addPizza(final String nameOfPizza) {
-        return storageEngine.add(nameOfPizza, new StorageResultHandler<Boolean>() {
-            public Boolean handle(final String subject, final ArrayList store) {
-                return store.add(new Pizza(subject));
-            }
-        });
+        return storageEngine.add(nameOfPizza, (subject, store) -> store.add(new ConcretePizza(subject)));
     }
 
     public Object removePizza(final String nameOfPizza) {
@@ -31,16 +27,11 @@ public class PizzaStorageEngineImpl {
     }
 
     public Object getPizza(final String name) {
-        return storageEngine.get(name, new StorageResultHandler() {
-            @Override
-            public Pizza handle(String subject, ArrayList store) {
-                return CollectionHelper.getPizza(subject, store);
-            }
-        });
+        return storageEngine.get(name, CollectionHelper::getPizza);
     }
 
     public void replacePizza(final String from, final String to) {
-        storageEngine.set(from, new Pizza(to));
+        storageEngine.set(from, new ConcretePizza(to));
     }
 
 }

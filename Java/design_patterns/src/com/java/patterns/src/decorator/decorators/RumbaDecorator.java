@@ -23,3 +23,13 @@ public class RumbaDecorator implements MusicDecorator {
         return tempo;
     }
 }
+
+class Moi {
+    void func() {
+
+    }
+}
+
+class moioi extends Moi {
+
+}

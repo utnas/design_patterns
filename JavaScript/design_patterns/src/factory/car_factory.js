@@ -3,7 +3,6 @@ var Fiesta = require('./ford_fiesta').FordFiesta;
 var Focus = require('./ford_focus').FordFocus;
 
 exports.Factory = (function () {
-    'use strict';
 
     this.makeCar = function makeCar(option) {
         switch (option) {

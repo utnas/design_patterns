@@ -10,7 +10,7 @@ public class PhysicalRenderer<T> implements IRenderer {
         this.content = content;
     }
 
-    public T displayResult() {
-        return (T) content.getMessage();
+    public String displayResult() {
+        return (String) content.getMessage();
     }
 }
