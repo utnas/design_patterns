@@ -1,8 +1,5 @@
 package com.java.architecture.src.mvc.model;
 
-import com.google.common.collect.ImmutableList;
-
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.google.common.collect.Lists.newArrayList;
@@ -16,15 +13,15 @@ public final class ConcretePizza implements Pizza {
         this.baseName = baseName;
     }
 
-    public String getRealName() {
+    public final String getRealName() {
         return computeName();
     }
 
-    public boolean addIngredient(final Ingredient ingredient) {
+    public final boolean addIngredient(final Ingredient ingredient) {
         return ingredients.add(ingredient);
     }
 
-    public List<Ingredient> getIngredients() {
+    public final List<Ingredient> getIngredients() {
         return unmodifiableList(ingredients);
     }
 

@@ -16,7 +16,7 @@ import static com.google.common.collect.Lists.newArrayList;
 public final class StorageEngine implements IStorage {
     final ArrayList<ConcretePizza> store = newArrayList();
 
-    public void set(final String from, final ConcretePizza toBeStored) {
+    public final void set(final String from, final ConcretePizza toBeStored) {
         final ConcretePizza pizza = CollectionHelper.getPizza(from, store);
         if (pizza != null) {
             store.add(toBeStored);
@@ -25,19 +25,19 @@ public final class StorageEngine implements IStorage {
         }
     }
 
-    public <T> T add(final String name, final StorageResultHandler<T> resultHandler) {
+    public final <T> T add(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 
-    public <T> T delete(final String name, final StorageResultHandler<T> resultHandler) {
+    public final <T> T delete(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 
-    public <T> T get(final String name, final StorageResultHandler<T> resultHandler) {
+    public final <T> T get(final String name, final StorageResultHandler<T> resultHandler) {
         return resultHandler.handle(name, store);
     }
 
-    public Pizza getPizzaByRealName(final String from) {
+    public final Pizza getPizzaByRealName(final String from) {
         try {
             return Iterables.find(store, new Predicate<ConcretePizza>() {
                 public boolean apply(final ConcretePizza pizza) {
