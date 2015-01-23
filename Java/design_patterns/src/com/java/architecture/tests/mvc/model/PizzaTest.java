@@ -1,7 +1,7 @@
 package com.java.architecture.tests.mvc.model;
 
-import com.java.architecture.src.mvc.model.Ingredient;
 import com.java.architecture.src.mvc.model.ConcretePizza;
+import com.java.architecture.src.mvc.model.Ingredient;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
