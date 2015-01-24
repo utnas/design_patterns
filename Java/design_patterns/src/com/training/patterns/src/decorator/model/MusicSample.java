@@ -1,6 +1,6 @@
 package com.training.patterns.src.decorator.model;
 
-public class MusicSample implements Music {
+public final class MusicSample implements Music {
     private final String melody;
     private final int tempo;
 
@@ -15,11 +15,11 @@ public class MusicSample implements Music {
     }
 
     @Override
-    public int getTempo() {
+    public final int getTempo() {
         return tempo;
     }
 
-    public String getMelody() {
+    public final String getMelody() {
         return melody;
     }
 }

@@ -13,23 +13,12 @@ public class RumbaDecorator implements MusicDecorator {
     }
 
     @Override
-    public MusicSample harmonize() {
-        music = make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
-        return music;
+    public final MusicSample harmonize() {
+        return make(music.getMelody(), (this.tempo + music.getTempo()) / 2);
     }
 
     @Override
-    public int getTempo() {
+    public final int getTempo() {
         return tempo;
     }
-}
-
-class Moi {
-    void func() {
-
-    }
-}
-
-class moioi extends Moi {
-
 }

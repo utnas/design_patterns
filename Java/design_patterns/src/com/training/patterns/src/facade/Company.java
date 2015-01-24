@@ -1,7 +1,6 @@
 package com.training.patterns.src.facade;
 
-public class Company {
-
+public class Company implements Enterprise{
     private String name;
     private EngineeringTeam engineering;
     private DevelopmentTeam development;
@@ -12,15 +11,15 @@ public class Company {
         development = new DevelopmentTeam();
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public String deliverSpecification() {
+    public final String deliverSpecification() {
         return engineering.makeSpecification();
     }
 
-    public String deliverSoftware() {
+    public final String deliverSoftware() {
         return development.makeSoftware();
     }
 }
