@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 
 import static com.google.common.collect.Lists.newArrayList;
+import static com.training.patterns.tests.CollectionHelper.collect;
 import static com.training.patterns.tests.CollectionHelper.hasValues;
 import static com.training.patterns.tests.CollectionHelper.toStringList;
 import static org.hamcrest.core.Is.is;
@@ -26,7 +27,7 @@ public class PreSaleTest {
     public void testShouldHaveAppointmentBook() {
         ArrayList<Visitable> visitableList = newArrayList();
 
-        visitableList.addAll(CollectionHelper.collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
+        visitableList.addAll(collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
 
         PreSale preSale = new PreSale("Ryan", "123-223-3223");
         for (final Visitable visitable : visitableList) {
