@@ -1,7 +1,9 @@
 package com.training.patterns.src.observer.observe;
 
+import com.google.common.collect.Lists;
 import com.training.patterns.src.observer.observer.IObserver;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Observe implements IObserve {
@@ -31,4 +33,10 @@ public class Observe implements IObserve {
     public String getValue() {
         return null;
     }
+
+
+    public ArrayList<IObserver> getObservers() {
+        return Lists.newArrayList(observers);
+    }
+
 }

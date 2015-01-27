@@ -1,6 +1,9 @@
 package com.training.patterns.tests;
 
+import com.google.common.base.Function;
+import com.google.common.collect.Iterables;
 import com.training.architecture.src.mvc.model.ConcretePizza;
+import com.training.patterns.src.observer.observer.IObserver;
 import com.training.patterns.src.observer.observer.UserObserver;
 import com.training.patterns.src.visitor.Appointment;
 import com.training.patterns.src.visitor.Visitable;
@@ -59,5 +62,13 @@ public class CollectionHelper {
 
     public static UserObserver createUser(final String userName) {
         return new UserObserver(userName);
+    }
+
+    public static Iterable<String> makeAList(final ArrayList<? extends IObserver> observers) {
+        return Iterables.transform(observers, new Function<IObserver, String>() {
+            public String apply(IObserver iObserver) {
+                return iObserver.getName();
+            }
+        });
     }
 }
