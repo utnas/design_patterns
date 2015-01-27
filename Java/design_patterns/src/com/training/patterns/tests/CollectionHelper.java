@@ -1,7 +1,7 @@
 package com.training.patterns.tests;
 
 import com.training.architecture.src.mvc.model.ConcretePizza;
-import com.training.patterns.src.observer.User;
+import com.training.patterns.src.observer.observer.UserObserver;
 import com.training.patterns.src.visitor.Appointment;
 import com.training.patterns.src.visitor.Visitable;
 import org.hamcrest.BaseMatcher;
@@ -57,7 +57,7 @@ public class CollectionHelper {
         return new ConcretePizza("");
     }
 
-    public static User createUser(final String userName) {
-        return new User(userName);
+    public static UserObserver createUser(final String userName) {
+        return new UserObserver(userName);
     }
 }
