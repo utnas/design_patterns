@@ -1,6 +1,6 @@
 package com.training.patterns.src.facade;
 
-public interface Enterprise {
+public interface Facade {
 
     public String deliverSpecification();
 

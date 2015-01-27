@@ -2,15 +2,12 @@ package com.training.patterns.tests.visitor;
 
 
 import com.training.patterns.src.visitor.*;
-import com.training.patterns.tests.CollectionHelper;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
 import static com.google.common.collect.Lists.newArrayList;
-import static com.training.patterns.tests.CollectionHelper.collect;
-import static com.training.patterns.tests.CollectionHelper.hasValues;
-import static com.training.patterns.tests.CollectionHelper.toStringList;
+import static com.training.patterns.tests.CollectionHelper.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 

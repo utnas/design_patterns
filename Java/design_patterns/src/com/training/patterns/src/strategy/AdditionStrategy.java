@@ -1,16 +1,16 @@
 package com.training.patterns.src.strategy;
 
-public class Division implements Strategy {
+public class AdditionStrategy implements Strategy {
     private float first;
     private float second;
 
-    public Division(float first, float second) {
+    public AdditionStrategy(float first, float second) {
         this.first = first;
         this.second = second;
     }
 
     @Override
     public float execute() {
-        return first / second;
+        return first + second;
     }
 }
