@@ -7,7 +7,7 @@ public class Context {
         this.strategy = strategy;
     }
 
-    public float executeStrategy() {
+    public float applyStrategy() {
         return strategy.execute();
     }
 }

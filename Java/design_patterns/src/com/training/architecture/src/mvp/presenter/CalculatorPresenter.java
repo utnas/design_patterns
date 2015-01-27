@@ -21,6 +21,6 @@ public class CalculatorPresenter implements ICalculatorViewListener {
 
     @Override
     public float clickButton(final Context context) {
-        return context.executeStrategy();
+        return context.applyStrategy();
     }
 }
