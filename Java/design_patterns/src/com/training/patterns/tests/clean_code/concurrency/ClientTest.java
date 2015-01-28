@@ -72,7 +72,6 @@ public class ClientTest {
             try {
                 connectSendReceive(clientNumber);
             } catch (IOException ignored) {
-
             }
         }
     }
