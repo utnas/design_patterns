@@ -7,11 +7,9 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.SocketException;
-import java.util.logging.Logger;
 
 public class Server implements Runnable {
 
-    private final Logger logger = Logger.getLogger("");
     private volatile boolean keepProcessing = true;
     private ServerSocket serverSocket;
 
@@ -22,13 +20,13 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
-        logger.info("Server Starting");
+        System.out.println("Server Starting");
 
         while (keepProcessing) {
             try {
-                logger.info("accepting client");
+                System.out.println("accepting client");
                 Socket socket = serverSocket.accept();
-                logger.info("go client");
+                System.out.println("go client");
                 process(socket);
             } catch (Exception e) {
                 handle(e);
@@ -45,13 +43,13 @@ public class Server implements Runnable {
             public void run() {
 
                 try {
-                    logger.info("Server: getting message");
+                    System.out.println("Server: getting message");
                     final String message = MessageUtils.getMessage(socket);
-                    logger.info("Server: got message: " + message);
+                    System.out.println("Server: got message: " + message);
                     Thread.sleep(1000);
-                    logger.info("Server: sending reply: " + message);
+                    System.out.println("Server: sending reply: " + message);
                     MessageUtils.sendMessage(socket, "Processed: " + message);
-                    logger.info("Server: sent");
+                    System.out.println("Server: sent");
                     closeIgnoringException(socket);
                 } catch (Exception e) {
                     e.printStackTrace();
