@@ -28,7 +28,11 @@ public class Observe implements IObserve {
     }
 
     @Override
-    public String getValue() {
+    public <T> T getValue() {
         return null;
+    }
+
+    public List<IObserver> getObservers() {
+        return observers;
     }
 }

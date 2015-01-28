@@ -1,6 +1,7 @@
 package com.training.patterns.tests.observer.observe;
 
 import com.training.patterns.src.observer.observe.Code;
+import com.training.patterns.src.observer.observe.Observe;
 import com.training.patterns.src.observer.observer.IObserver;
 import com.training.patterns.src.observer.observer.UserObserver;
 import org.junit.Test;
@@ -25,8 +26,10 @@ public class CodeTest {
         UserObserver firstUser = createUser("My first Name");
         UserObserver secondUser = createUser("My second Name");
         ArrayList<IObserver> observers = newArrayList(firstUser, secondUser);
-        observers.remove(firstUser);
+        final Observe code = new Code(observers);
+        code.removeObserver(firstUser);
         assertThat(newArrayList(makeAList(observers)), hasValues("My second Name"));
+        assertThat(code.getObservers().size(), is(1));
 
     }
 
