@@ -11,13 +11,13 @@ import static com.training.patterns.tests.CollectionHelper.*;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-public class PreSaleTest {
+public class ConcretePreSaleTest {
 
     @Test
     public void testShouldHaveAppointWithVisitedRDManagerGuest() {
-        PreSale preSale = new PreSale("Jay", "514-235-2572");
-        preSale.visit(new RDManager("Albira"));
-        assertThat(preSale.getAppointments().get(0).getPartnerName(), is("Albira"));
+        ConcretePreSale concretePreSale = new ConcretePreSale("Jay", "514-235-2572");
+        concretePreSale.visit(new RDManager("Albira"));
+        assertThat(concretePreSale.getAppointments().get(0).getPartnerName(), is("Albira"));
     }
 
     @Test
@@ -26,11 +26,11 @@ public class PreSaleTest {
 
         visitableList.addAll(collect(new Customer("Toyota"), new RDManager("Alan"), new Prospect("Art Confirm")));
 
-        PreSale preSale = new PreSale("Ryan", "123-223-3223");
+        ConcretePreSale concretePreSale = new ConcretePreSale("Ryan", "123-223-3223");
         for (final Visitable visitable : visitableList) {
-            visitable.accept(preSale);
+            visitable.accept(concretePreSale);
         }
-        assertThat(toStringList(preSale.getAppointments()), hasValues("Toyota", "Art Confirm", "Alan"));
+        assertThat(toStringList(concretePreSale.getAppointments()), hasValues("Toyota", "Art Confirm", "Alan"));
     }
 
 }

@@ -20,7 +20,7 @@ public class Server implements Runnable {
 
     @Override
     public void run() {
-        System.out.println("Server Starting");
+        System.out.println("Server Starting ...");
 
         while (keepProcessing) {
             try {

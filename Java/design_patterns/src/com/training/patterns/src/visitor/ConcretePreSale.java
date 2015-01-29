@@ -5,12 +5,12 @@ import java.util.List;
 import static com.google.common.collect.Lists.newArrayList;
 import static java.util.Collections.unmodifiableList;
 
-public class PreSale implements SalesVisitor {
+public class ConcretePreSale implements SalesVisitor {
     private final String name;
     private final String phoneNumber;
     private List<Appointment> appointments = newArrayList();
 
-    public PreSale(final String name, final String phoneNumber) {
+    public ConcretePreSale(final String name, final String phoneNumber) {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
