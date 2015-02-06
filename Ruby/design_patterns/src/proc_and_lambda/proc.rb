@@ -1,0 +1,2 @@
+class TestProc
+end
