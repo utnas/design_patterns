@@ -13,12 +13,14 @@ public class EditorTest {
     @Test
     public void itShouldModifyTheBrightness() {
         final BrightnessController brightnessController = new BrightnessController();
-        assertThat(brightnessController.increase(new Image("My path", "None", 0), 30).getBrightness(), is(30));
+        Image image = new Image("My path", "None", 0);
+        assertThat(brightnessController.increase(image, 30).getBrightness(), is(30));
     }
 
     @Test
     public void itShouldDecreaseBrightness() {
         final BrightnessController brightnessController = new BrightnessController();
-        assertThat(brightnessController.decrease(new Image("My path", "None", 150), 23).getBrightness(), is(127));
+        Image image = new Image("My path", "None", 150);
+        assertThat(brightnessController.decrease(image, 23).getBrightness(), is(127));
     }
 }
