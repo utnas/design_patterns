@@ -1,5 +1,10 @@
 package com.training.architecture.src.srp;
 
+/*
+* SOLID principles used here:
+* Single Responsibility Principle: Class image has no additional usage
+* Open Closed Principle: this class is immutable close to modification but open to extension
+*/
 public final class Image {
     private final String path;
     private final String direction;
