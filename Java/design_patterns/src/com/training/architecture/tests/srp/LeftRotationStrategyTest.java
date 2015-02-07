@@ -1,7 +1,7 @@
 package com.training.architecture.tests.srp;
 
-import com.training.architecture.src.srp.Image;
-import com.training.architecture.src.srp.rotation.strategy.LeftRotationStrategy;
+import com.training.architecture.src.clean_code.srp.Image;
+import com.training.architecture.src.clean_code.srp.rotation.strategy.LeftRotationStrategy;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

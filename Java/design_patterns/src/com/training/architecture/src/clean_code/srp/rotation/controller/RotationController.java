@@ -1,7 +1,7 @@
-package com.training.architecture.src.srp.rotation.controller;
+package com.training.architecture.src.clean_code.srp.rotation.controller;
 
-import com.training.architecture.src.srp.Image;
-import com.training.architecture.src.srp.rotation.strategy.Strategy;
+import com.training.architecture.src.clean_code.srp.Image;
+import com.training.architecture.src.clean_code.srp.rotation.strategy.Strategy;
 
 public final class RotationController {
     private Strategy<Image> strategy;

@@ -1,4 +1,4 @@
-package com.training.architecture.src.srp;
+package com.training.architecture.src.clean_code.srp;
 
 /*
 * SOLID principles used here:

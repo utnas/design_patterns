@@ -1,4 +1,4 @@
-package com.training.architecture.src.srp;
+package com.training.architecture.src.clean_code.srp;
 
 public interface Editor<T> {
     public Image increase(final T subject, final int value);
