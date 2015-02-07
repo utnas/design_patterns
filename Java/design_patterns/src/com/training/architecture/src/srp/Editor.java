@@ -1,7 +1,7 @@
 package com.training.architecture.src.srp;
 
-public interface Editor {
-    public Image increase(final Image image, final int value);
+public interface Editor<T> {
+    public Image increase(final T subject, final int value);
 
-    public Image decrease(final Image image, final int value);
+    public Image decrease(final T subject, final int value);
 }
