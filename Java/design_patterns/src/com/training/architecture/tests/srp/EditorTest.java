@@ -1,6 +1,6 @@
 package com.training.architecture.tests.srp;
 
-import com.training.architecture.src.clean_code.srp.BrightnessController;
+import com.training.architecture.src.clean_code.srp.editor.BrightnessController;
 import com.training.architecture.src.clean_code.srp.Image;
 import org.junit.Test;
 

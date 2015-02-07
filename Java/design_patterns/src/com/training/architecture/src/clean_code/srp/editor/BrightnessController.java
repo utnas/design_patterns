@@ -1,4 +1,6 @@
-package com.training.architecture.src.clean_code.srp;
+package com.training.architecture.src.clean_code.srp.editor;
+
+import com.training.architecture.src.clean_code.srp.Image;
 
 public final class BrightnessController implements Editor<Image> {
 
