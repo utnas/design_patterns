@@ -14,7 +14,7 @@ public class RightRotationStrategyTest {
     public void itShouldRotateImageOnRight() {
         Image image = Mockito.mock(Image.class);
         Mockito.when(image.getDirection()).thenReturn("Right");
-        final RightRotationStrategy rightRotator = new RightRotationStrategy(image);
-        assertThat(rightRotator.apply().getDirection(), is("Right"));
+
+        assertThat(new RightRotationStrategy(image).apply().getDirection(), is("Right"));
     }
 }
