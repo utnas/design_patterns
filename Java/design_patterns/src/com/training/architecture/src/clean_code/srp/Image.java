@@ -5,7 +5,7 @@ package com.training.architecture.src.clean_code.srp;
 * Single Responsibility Principle: Class image has no additional usage
 * Open Closed Principle: this class is immutable close to modification but open to extension
 */
-public final class Image {
+public class Image implements Picture {
     private final String path;
     private final String direction;
     private final int brightness;
@@ -16,15 +16,15 @@ public final class Image {
         this.brightness = brightness;
     }
 
-    public final String getPath() {
+    public String getPath() {
         return path;
     }
 
-    public final String getDirection() {
+    public String getDirection() {
         return direction;
     }
 
-    public final int getBrightness() {
+    public int getBrightness() {
         return brightness;
     }
 }

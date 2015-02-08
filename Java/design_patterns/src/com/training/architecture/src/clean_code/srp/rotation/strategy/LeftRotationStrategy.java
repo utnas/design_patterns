@@ -2,7 +2,7 @@ package com.training.architecture.src.clean_code.srp.rotation.strategy;
 
 import com.training.architecture.src.clean_code.srp.Image;
 
-public final class LeftRotationStrategy implements Strategy<Image> {
+public class LeftRotationStrategy implements Strategy<Image> {
     private final Image image;
 
     public LeftRotationStrategy(final Image image) {
@@ -10,7 +10,7 @@ public final class LeftRotationStrategy implements Strategy<Image> {
     }
 
     @Override
-    public final Image apply() {
+    public Image apply() {
         return new Image(image.getPath(), "Left", image.getBrightness());
     }
 }
